@@ -4,53 +4,235 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Years Ahead</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uswds/3.13.0/js/uswds.min.js">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- USWDS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uswds@3.8.0/dist/css/uswds.min.css">
+    <!-- Custom CSS -->
+    <style>
+      :root {
+        --primary: #5b2a86;
+        --primary-dark: #4a2270;
+        --text-color: #1b1b1b;
+        --bg-light: #ffffff;
+        --border-light: #e6e6e6;
+      }
+
+      body {
+        font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.7;
+        color: var(--text-color);
+        margin: 0;
+        background: var(--bg-light);
+      }
+
+      /* Header */
+      .site-header {
+        background: white;
+        padding: 1.5rem 0;
+        border-bottom: 1px solid var(--border-light);
+      }
+
+      .site-header h1 {
+        margin: 0;
+        font-size: 1.875rem;
+        font-weight: 700;
+      }
+
+      .site-header h1 a {
+        color: var(--primary);
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        text-decoration-thickness: 2px;
+        transition: color 0.2s ease;
+      }
+
+      .site-header h1 a:hover {
+        color: var(--primary-dark);
+      }
+
+      /* Main content */
+      .main-content {
+        padding: 3rem 0 5rem;
+        max-width: 42rem;
+        margin: 0 auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      h2 {
+        font-size: 2.25rem;
+        line-height: 1.2;
+        font-weight: 700;
+        margin: 0 0 1.5rem;
+        color: var(--text-color);
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 3rem 0 1rem;
+        color: var(--text-color);
+      }
+
+      p, li {
+        font-size: 1.125rem;
+        margin-bottom: 1rem;
+      }
+
+      strong {
+        font-weight: 700;
+      }
+
+      ul {
+        padding-left: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      ul li {
+        margin-bottom: 0.5rem;
+      }
+
+      /* Form styling */
+      .signup-form {
+        background: #f8f8fa;
+        padding: 2rem;
+        border-radius: 8px;
+        margin-top: 3rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+        color: var(--text-color);
+      }
+
+      input[type="text"],
+      input[type="email"] {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 2px solid #dcdee0;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-family: inherit;
+        transition: border-color 0.2s ease;
+        background: white;
+      }
+
+      input[type="text"]:focus,
+      input[type="email"]:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(91, 42, 134, 0.1);
+      }
+
+      .btn-submit {
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 0.875rem 2rem;
+        font-size: 1.125rem;
+        font-weight: 600;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        font-family: inherit;
+      }
+
+      .btn-submit:hover {
+        background: var(--primary-dark);
+      }
+
+      .btn-submit:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(91, 42, 134, 0.3);
+      }
+
+      /* Footer */
+      footer {
+        background: #f8f8fa;
+        padding: 3rem 0;
+        text-align: center;
+        border-top: 1px solid var(--border-light);
+        font-size: 0.875rem;
+        color: #71767a;
+      }
+
+      footer a {
+        color: #71767a;
+      }
+
+      /* Mobile responsiveness */
+      @media (max-width: 640px) {
+        h2 {
+          font-size: 1.875rem;
+        }
+
+        h3 {
+          font-size: 1.25rem;
+        }
+
+        .main-content {
+          padding: 2rem 1rem 3rem;
+        }
+
+        .signup-form {
+          padding: 1.5rem;
+        }
+      }
+    </style>
   </head>
   <body>
-    <header class="usa-header usa-header--basic">
-      <div class="usa-nav-container">
-        <div class="usa-navbar">
-          <h1 class="usa-logo"><a href="/">Years Ahead</a></h1>
-        </div>
+    <header class="site-header">
+      <div class="main-content">
+        <h1><a href="/">Years Ahead</a></h1>
       </div>
     </header>
 
-    <main class="usa-section usa-prose">
-      <div class="grid-container">
-        <h2>A conference for the people designing the next decade of public technology</h2>
-        <p><strong>Years Ahead</strong> is a global gathering for public servants and technologists who build digital infrastructure for society. It connects the people shaping how governments design, deliver, and sustain digital services around the world.</p>
+    <main class="main-content">
+      <h2>A conference for the people designing the next decade of public technology</h2>
+      
+      <p><strong>Years Ahead</strong> is a global gathering for public servants and technologists who build digital infrastructure for society. It connects the people shaping how governments design, deliver, and sustain digital services around the world.</p>
 
-        <h3>Upcoming</h3>
-        <ul>
-          <li><strong>Michigan — Spring 2026</strong></li>
-          <li><strong>Nordics — Fall 2026</strong></li>
-        </ul>
+      <h3>Upcoming</h3>
+      <ul>
+        <li><strong>Michigan</strong> — Spring 2026</li>
+        <li><strong>Nordics</strong> — Fall 2026</li>
+      </ul>
 
-        <p>Across both events, the focus is practical: what teams are doing, what’s working, and how we build the next wave of capacity together.</p>
+      <p>Across both events, the focus is practical: what teams are doing, what's working, and how we build the next wave of capacity together.</p>
 
-        <h3>Stay in the loop</h3>
-        <form method="POST" action="https://example.com/subscribe" class="usa-form">
-          <label for="name">Full name</label>
-          <input id="name" name="name" type="text" required>
-
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required>
-
-          <label for="org">Organization (optional)</label>
-          <input id="org" name="org" type="text">
-
-          <button type="submit" class="usa-button">Submit</button>
+      <div class="signup-form">
+        <h3 style="margin-top: 0;">Stay in the loop</h3>
+        <form method="POST" action="/subscribe">
+          <div class="form-group">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="org">Organization (optional)</label>
+            <input type="text" id="org" name="org">
+          </div>
+          
+          <button type="submit" class="btn-submit">Submit</button>
         </form>
       </div>
     </main>
 
-    <footer class="usa-footer usa-footer--slim">
-      <div class="grid-container">
-        <p>© 2025 Years Ahead · info@yearsahead.io</p>
+    <footer>
+      <div class="main-content">
+        <p>© 2025 Years Ahead · <a href="mailto:info@yearsahead.io">info@yearsahead.io</a></p>
       </div>
     </footer>
-
-    <script src="https://cdn.designsystem.digital.gov/3.0.0/js/uswds.min.js"></script>
   </body>
 </html>
