@@ -4,234 +4,430 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Years Ahead</title>
-    <!-- USWDS CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uswds@3.8.0/dist/css/uswds.min.css">
-    <!-- Custom CSS -->
     <style>
       :root {
-        --primary: #5b2a86;
-        --primary-dark: #4a2270;
-        --text-color: #1b1b1b;
-        --bg-light: #ffffff;
-        --border-light: #e6e6e6;
+        --primary: #0066CC;        /* Bright blue */
+        --secondary: #FF0080;      /* Hot pink */
+        --accent: #00D4AA;         /* Teal */
+        --highlight: #FFE500;      /* Yellow */
+        --purple: #6B46C1;         /* Purple */
+        --bg-main: #FFFFFF;
+        --bg-light: #F7F8FA;
+        --bg-gradient: linear-gradient(135deg, #E3F2FD 0%, #FCE4EC 100%);
+        --text-dark: #0F172A;
+        --text-mid: #475569;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
       body {
-        font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        line-height: 1.7;
-        color: var(--text-color);
-        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+        background: var(--bg-main);
+        overflow-x: hidden;
+      }
+
+      /* Header with gradient background */
+      header {
+        background: var(--bg-gradient);
+        padding: 3rem 0;
+        position: relative;
+      }
+
+      /* Decorative shapes */
+      header::before {
+        content: '';
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 200px;
+        height: 200px;
+        background: var(--secondary);
+        border-radius: 50%;
+        opacity: 0.1;
+      }
+
+      header::after {
+        content: '';
+        position: absolute;
+        bottom: -30px;
+        left: 10%;
+        width: 150px;
+        height: 150px;
+        background: var(--accent);
+        border-radius: 50%;
+        opacity: 0.08;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        font-weight: 900;
+        letter-spacing: -2px;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--purple) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .tagline {
+        font-size: 1.375rem;
+        color: var(--text-mid);
+        font-weight: 400;
+        max-width: 600px;
+      }
+
+      /* Intro section */
+      .intro {
+        padding: 4rem 0;
+        background: white;
+      }
+
+      .intro p {
+        font-size: 1.25rem;
+        line-height: 1.8;
+        color: var(--text-mid);
+      }
+
+      .intro strong {
+        color: var(--text-dark);
+        font-weight: 700;
+      }
+
+      /* Events section with cards */
+      .events {
+        padding: 4rem 0;
         background: var(--bg-light);
       }
 
-      /* Header */
-      .site-header {
-        background: white;
-        padding: 1.5rem 0;
-        border-bottom: 1px solid var(--border-light);
+      .events-header {
+        text-align: center;
+        margin-bottom: 3rem;
       }
 
-      .site-header h1 {
-        margin: 0;
-        font-size: 1.875rem;
-        font-weight: 700;
-      }
-
-      .site-header h1 a {
-        color: var(--primary);
-        text-decoration: underline;
-        text-underline-offset: 4px;
-        text-decoration-thickness: 2px;
-        transition: color 0.2s ease;
-      }
-
-      .site-header h1 a:hover {
-        color: var(--primary-dark);
-      }
-
-      /* Main content */
-      .main-content {
-        padding: 3rem 0 5rem;
-        max-width: 42rem;
-        margin: 0 auto;
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-
-      h2 {
-        font-size: 2.25rem;
-        line-height: 1.2;
-        font-weight: 700;
-        margin: 0 0 1.5rem;
-        color: var(--text-color);
-      }
-
-      h3 {
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin: 3rem 0 1rem;
-        color: var(--text-color);
-      }
-
-      p, li {
-        font-size: 1.125rem;
+      .events h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--text-dark);
         margin-bottom: 1rem;
       }
 
-      strong {
-        font-weight: 700;
+      .event-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
       }
 
-      ul {
-        padding-left: 1.5rem;
-        margin-bottom: 2rem;
+      .event-card {
+        background: white;
+        border-radius: 20px;
+        padding: 2.5rem;
+        text-align: center;
+        position: relative;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 3px solid transparent;
       }
 
-      ul li {
+      .event-card:nth-child(1) {
+        border-color: var(--secondary);
+      }
+
+      .event-card:nth-child(2) {
+        border-color: var(--accent);
+      }
+
+      .event-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      }
+
+      .season {
+        font-size: 2rem;
+        font-weight: 900;
         margin-bottom: 0.5rem;
       }
 
-      /* Form styling */
-      .signup-form {
-        background: #f8f8fa;
-        padding: 2rem;
-        border-radius: 8px;
-        margin-top: 3rem;
+      .event-card:nth-child(1) .season {
+        color: var(--secondary);
       }
 
-      .form-group {
-        margin-bottom: 1.5rem;
+      .event-card:nth-child(2) .season {
+        color: var(--accent);
       }
 
-      label {
-        display: block;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-        font-size: 1rem;
-        color: var(--text-color);
+      .location {
+        font-size: 1.25rem;
+        color: var(--text-mid);
+        font-weight: 500;
       }
 
-      input[type="text"],
-      input[type="email"] {
-        width: 100%;
-        padding: 0.75rem 1rem;
-        border: 2px solid #dcdee0;
-        border-radius: 4px;
-        font-size: 1rem;
-        font-family: inherit;
-        transition: border-color 0.2s ease;
+      /* Workshop section */
+      .workshop-wrapper {
+        padding: 4rem 0;
         background: white;
       }
 
-      input[type="text"]:focus,
-      input[type="email"]:focus {
-        outline: none;
-        border-color: var(--primary);
-        box-shadow: 0 0 0 3px rgba(91, 42, 134, 0.1);
+      .workshop {
+        background: linear-gradient(135deg, #FFF9C4 0%, #FFE0B2 100%);
+        border-radius: 24px;
+        padding: 3rem;
+        position: relative;
+        overflow: hidden;
       }
 
-      .btn-submit {
-        background: var(--primary);
+      .workshop::before {
+        content: '🚀';
+        position: absolute;
+        top: -20px;
+        right: 30px;
+        font-size: 4rem;
+        opacity: 0.2;
+        transform: rotate(15deg);
+      }
+
+      .workshop h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--text-dark);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .workshop-badge {
+        background: var(--highlight);
+        color: var(--text-dark);
+        font-size: 0.875rem;
+        padding: 0.375rem 1rem;
+        border-radius: 50px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      /* What to Expect with colorful bullets */
+      .expect {
+        padding: 4rem 0;
+        background: var(--bg-light);
+      }
+
+      .expect h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 3rem;
+        color: var(--text-dark);
+      }
+
+      .expect-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .expect-item {
+        background: white;
+        padding: 2rem;
+        border-radius: 16px;
+        border-left: 4px solid;
+        transition: transform 0.2s ease;
+      }
+
+      .expect-item:nth-child(1) { border-color: var(--primary); }
+      .expect-item:nth-child(2) { border-color: var(--secondary); }
+      .expect-item:nth-child(3) { border-color: var(--accent); }
+      .expect-item:nth-child(4) { border-color: var(--purple); }
+
+      .expect-item:hover {
+        transform: translateX(8px);
+      }
+
+      /* Call to action section */
+      .cta {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--purple) 100%);
         color: white;
-        border: none;
-        padding: 0.875rem 2rem;
+        padding: 5rem 0;
+        text-align: center;
+        position: relative;
+      }
+
+      .cta::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+      }
+
+      .cta-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .cta h2 {
+        font-size: 3rem;
+        font-weight: 900;
+        margin-bottom: 1rem;
+      }
+
+      .cta p {
+        font-size: 1.375rem;
+        margin-bottom: 2rem;
+        opacity: 0.95;
+      }
+
+      .email-button {
+        display: inline-block;
+        background: white;
+        color: var(--primary);
+        padding: 1.25rem 3rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
         font-size: 1.125rem;
-        font-weight: 600;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.2s ease;
-        font-family: inherit;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
       }
 
-      .btn-submit:hover {
-        background: var(--primary-dark);
-      }
-
-      .btn-submit:focus {
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(91, 42, 134, 0.3);
+      .email-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.3);
       }
 
       /* Footer */
       footer {
-        background: #f8f8fa;
-        padding: 3rem 0;
+        background: white;
+        padding: 2rem 0;
         text-align: center;
-        border-top: 1px solid var(--border-light);
-        font-size: 0.875rem;
-        color: #71767a;
+        color: var(--text-mid);
+        border-top: 1px solid #E5E7EB;
       }
 
-      footer a {
-        color: #71767a;
+      /* Fun animations */
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
       }
 
-      /* Mobile responsiveness */
-      @media (max-width: 640px) {
-        h2 {
-          font-size: 1.875rem;
+      .workshop::before {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      /* Mobile */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
         }
 
-        h3 {
-          font-size: 1.25rem;
+        .cta h2 {
+          font-size: 2rem;
         }
 
-        .main-content {
-          padding: 2rem 1rem 3rem;
+        .expect-grid {
+          grid-template-columns: 1fr;
         }
 
-        .signup-form {
-          padding: 1.5rem;
+        .workshop {
+          padding: 2rem;
         }
       }
     </style>
   </head>
   <body>
-    <header class="site-header">
-      <div class="main-content">
-        <h1><a href="/">Years Ahead</a></h1>
+    <header>
+      <div class="container">
+        <h1>Years Ahead</h1>
+        <p class="tagline">A conference for people building the next generation of public service delivery.</p>
       </div>
     </header>
 
-    <main class="main-content">
-      <h2>A conference for the people designing the next decade of public technology</h2>
-      
-      <p><strong>Years Ahead</strong> is a global gathering for public servants and technologists who build digital infrastructure for society. It connects the people shaping how governments design, deliver, and sustain digital services around the world.</p>
-
-      <h3>Upcoming</h3>
-      <ul>
-        <li><strong>Michigan</strong> — Spring 2026</li>
-        <li><strong>Nordics</strong> — Fall 2026</li>
-      </ul>
-
-      <p>Across both events, the focus is practical: what teams are doing, what's working, and how we build the next wave of capacity together.</p>
-
-      <div class="signup-form">
-        <h3 style="margin-top: 0;">Stay in the loop</h3>
-        <form method="POST" action="/subscribe">
-          <div class="form-group">
-            <label for="name">Full name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="org">Organization (optional)</label>
-            <input type="text" id="org" name="org">
-          </div>
-          
-          <button type="submit" class="btn-submit">Submit</button>
-        </form>
+    <section class="intro">
+      <div class="container">
+        <p><strong>Years Ahead</strong> brings together technologists and public servants who design and deliver digital work in government. It's a space for sharing methods, connecting across teams, and building the next wave of public technology practice.</p>
       </div>
-    </main>
+    </section>
+
+    <section class="events">
+      <div class="container">
+        <div class="events-header">
+          <h2>In 2026, Years Ahead will hold two gatherings:</h2>
+        </div>
+        <div class="event-grid">
+          <div class="event-card">
+            <div class="season">Spring</div>
+            <div class="location">Michigan</div>
+          </div>
+          <div class="event-card">
+            <div class="season">Fall</div>
+            <div class="location">Nordics</div>
+          </div>
+        </div>
+        <p style="text-align: center; font-size: 1.125rem; color: var(--text-mid); max-width: 700px; margin: 0 auto;">Both editions focus on how teams build capacity: how they start, what they've learned, and how they keep moving. The emphasis is on practice—delivery, organization design, tools, and the realities of public work at scale.</p>
+      </div>
+    </section>
+
+    <section class="workshop-wrapper">
+      <div class="container">
+        <div class="workshop">
+          <h2>
+            Workshop: Roll Your Own Digital Service
+            <span class="workshop-badge">Featured</span>
+          </h2>
+          <p>A full-day, hands-on session for teams ready to start or strengthen their own delivery unit. Participants learn the fundamentals of forming a digital service team: scope, staffing, procurement, and policy alignment. You'll leave with a working blueprint for how to stand up and sustain delivery inside your own organization.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="expect">
+      <div class="container">
+        <h2>What to Expect</h2>
+        <div class="expect-grid">
+          <div class="expect-item">
+            <p>Case sessions and workshops led by practitioners</p>
+          </div>
+          <div class="expect-item">
+            <p>Open discussions across agencies and sectors</p>
+          </div>
+          <div class="expect-item">
+            <p>Practical sessions on delivery, collaboration, and capability-building</p>
+          </div>
+          <div class="expect-item">
+            <p>A community of people who are still doing the work</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta-content">
+        <div class="container">
+          <h2>Stay Informed</h2>
+          <p>Add your name to receive updates and calls for participation.</p>
+          <a href="mailto:info@yearsahead.io" class="email-button">info@yearsahead.io</a>
+        </div>
+      </div>
+    </section>
 
     <footer>
-      <div class="main-content">
-        <p>© 2025 Years Ahead · <a href="mailto:info@yearsahead.io">info@yearsahead.io</a></p>
+      <div class="container">
+        <p>© 2025 Years Ahead</p>
       </div>
     </footer>
   </body>
