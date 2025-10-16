@@ -4,8 +4,42 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Years Ahead</title>
+    
+    <!-- SEO & Social -->
+    <meta name="description" content="A conference for people building the next generation of public service delivery. Bringing together technologists and public servants who design and deliver digital work in government.">
+    <meta property="og:title" content="Years Ahead">
+    <meta property="og:description" content="A conference for people building the next generation of public service delivery.">
+    <meta property="og:type" content="website">
+    
     <style>
+      /* =================================
+         CUSTOM FONT SETUP (for tomorrow)
+         =================================
+         When you buy your fonts, add them here:
+         
+         @font-face {
+           font-family: 'YourHeadingFont';
+           src: url('/fonts/heading-font.woff2') format('woff2');
+           font-weight: 900;
+           font-display: swap;
+         }
+         
+         @font-face {
+           font-family: 'YourBodyFont';
+           src: url('/fonts/body-font.woff2') format('woff2');
+           font-weight: 400;
+           font-display: swap;
+         }
+         
+         Then update the --font variables below
+      ================================= */
+
       :root {
+        /* FONTS - Update these tomorrow with your custom fonts */
+        --font-heading: 'Avenir Next', 'Century Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-body: 'Georgia', 'Cambria', 'Times New Roman', serif;
+        
+        /* COLORS - These are good as is */
         --primary: #0066CC;        /* Bright blue */
         --secondary: #FF0080;      /* Hot pink */
         --accent: #00D4AA;         /* Teal */
@@ -25,11 +59,21 @@
       }
 
       body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        font-family: var(--font-body);
+        font-size: 18px;
         line-height: 1.6;
         color: var(--text-dark);
         background: var(--bg-main);
         overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* Typography */
+      h1, h2, h3 {
+        font-family: var(--font-heading);
+        font-weight: 900;
+        line-height: 1.1;
       }
 
       /* Header with gradient background */
@@ -156,6 +200,7 @@
       }
 
       .season {
+        font-family: var(--font-heading);
         font-size: 2rem;
         font-weight: 900;
         margin-bottom: 0.5rem;
@@ -200,6 +245,7 @@
       }
 
       .workshop h2 {
+        font-family: var(--font-heading);
         font-size: 2rem;
         font-weight: 800;
         color: var(--text-dark);
@@ -218,6 +264,7 @@
         border-radius: 50px;
         font-weight: 700;
         text-transform: uppercase;
+        font-family: var(--font-heading);
       }
 
       /* What to Expect with colorful bullets */
@@ -227,6 +274,7 @@
       }
 
       .expect h2 {
+        font-family: var(--font-heading);
         font-size: 2.5rem;
         font-weight: 800;
         text-align: center;
@@ -282,6 +330,7 @@
       }
 
       .cta h2 {
+        font-family: var(--font-heading);
         font-size: 3rem;
         font-weight: 900;
         margin-bottom: 1rem;
@@ -302,6 +351,7 @@
         text-decoration: none;
         font-weight: 700;
         font-size: 1.125rem;
+        font-family: var(--font-heading);
         transition: all 0.3s ease;
         box-shadow: 0 4px 20px rgba(0,0,0,0.2);
       }
