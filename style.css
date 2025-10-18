@@ -1,16 +1,33 @@
 /* ---------------------------------------
+   Custom Font Imports
+----------------------------------------*/
+@font-face {
+  font-family: 'PlexSoft-Black';
+  src: url('plexsoft-black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MITQuailav-Regular';
+  src: url('mit-quailav-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------------------------------------
    Years Ahead custom styles
 ----------------------------------------*/
-
 /* Base layout */
 body {
   background-color: #f8f9fa;
   color: #1b1b1b;
-  font-family: 'Public Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'MITQuailav-Regular', 'Public Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
 }
-
 /* Header */
 .usa-header {
   background-color: #1a4480;
@@ -18,27 +35,25 @@ body {
   padding: 1.5rem 0;
   border-bottom: 4px solid #002d72;
 }
-
 .usa-logo a {
   color: #ffffff;
   font-size: 1.75rem;
   text-decoration: none;
   font-weight: 600;
+  font-family: 'PlexSoft-Black', 'Public Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-
 /* Headings */
 h1, h2, h3 {
   color: #0b4778;
-  font-weight: 600;
+  font-weight: 900;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
+  font-family: 'PlexSoft-Black', 'Public Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-
 /* Section */
 .usa-section {
   padding: 4rem 1rem;
 }
-
 /* Buttons */
 .usa-button {
   background-color: #1a4480;
@@ -48,12 +63,11 @@ h1, h2, h3 {
   padding: 0.75rem 1.5rem;
   font-weight: 600;
   cursor: pointer;
+  font-family: 'PlexSoft-Black', 'Public Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-
 .usa-button:hover {
   background-color: #0b4778;
 }
-
 /* Footer */
 .usa-footer {
   background-color: #162e51;
@@ -62,25 +76,23 @@ h1, h2, h3 {
   text-align: center;
   font-size: 0.875rem;
 }
-
 /* Form tweaks */
 .usa-form label {
   font-weight: 500;
+  font-family: 'PlexSoft-Black', 'Public Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-
 .usa-form input {
   margin-bottom: 1rem;
   border: 1px solid #dfe1e2;
   border-radius: 4px;
   padding: 0.5rem;
   width: 100%;
+  font-family: 'MITQuailav-Regular', 'Public Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-
 .usa-form input:focus {
   border-color: #1a4480;
   outline: none;
 }
-
 /* Container adjustments */
 .grid-container {
   max-width: 700px;
