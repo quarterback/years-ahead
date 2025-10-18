@@ -6,9 +6,9 @@
     <title>Years Ahead</title>
     
     <!-- SEO & Social -->
-    <meta name="description" content="A conference for people building the next generation of public service delivery. Bringing together technologists and public servants who design and deliver digital work in government.">
+    <meta name="description" content="Years Ahead is a global conversation about what it means to build for the public.">
     <meta property="og:title" content="Years Ahead">
-    <meta property="og:description" content="A conference for people building the next generation of public service delivery.">
+    <meta property="og:description" content="A global conference for people building the next generation of public service delivery.">
     <meta property="og:type" content="website">
     
     <style>
@@ -18,7 +18,7 @@
 
       @font-face {
         font-family: 'PlexSoft-Black';
-        src: url('/fonts/plexsoft-black.woff') format('woff');
+        src: url('plexsoft-black.woff') format('woff');
         font-weight: 900;
         font-style: normal;
         font-display: swap;
@@ -26,7 +26,7 @@
 
       @font-face {
         font-family: 'MITQuailav-Regular';
-        src: url('/fonts/mit-quailav-regular.woff') format('woff');
+        src: url('mit-quailav-regular.woff') format('woff');
         font-weight: 400;
         font-style: normal;
         font-display: swap;
@@ -359,6 +359,65 @@
         box-shadow: 0 8px 30px rgba(0,0,0,0.3);
       }
 
+      /* Newsletter form styling */
+      .embeddable-buttondown-form {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
+
+      .newsletter-input-group {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .newsletter-input-group input[type="email"] {
+        flex: 1;
+        min-width: 250px;
+        padding: 1rem 1.5rem;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-family: var(--font-body);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      }
+
+      .newsletter-input-group input[type="email"]:focus {
+        outline: 3px solid rgba(255, 255, 255, 0.5);
+        outline-offset: 2px;
+      }
+
+      .newsletter-input-group input[type="submit"] {
+        background: white;
+        color: var(--primary);
+        padding: 1rem 2.5rem;
+        border: none;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.125rem;
+        font-family: var(--font-heading);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      }
+
+      .newsletter-input-group input[type="submit"]:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      }
+
       /* Footer */
       footer {
         background: white;
@@ -394,6 +453,18 @@
 
         .workshop {
           padding: 2rem;
+        }
+
+        .newsletter-input-group {
+          flex-direction: column;
+        }
+
+        .newsletter-input-group input[type="email"] {
+          min-width: 100%;
+        }
+
+        .newsletter-input-group input[type="submit"] {
+          width: 100%;
         }
       }
     </style>
@@ -462,14 +533,26 @@
         <div class="container">
           <h2>Stay Informed</h2>
           <p>Add your name to receive updates and calls for participation.</p>
-          <a href="mailto:info@yearsahead.io" class="email-button">info@yearsahead.io</a>
+          <form
+            action="https://buttondown.com/api/emails/embed-subscribe/yearsahead"
+            method="post"
+            target="popupwindow"
+            onsubmit="window.open('https://buttondown.com/yearsahead', 'popupwindow')"
+            class="embeddable-buttondown-form"
+          >
+            <label for="bd-email" class="visually-hidden">Enter your email</label>
+            <div class="newsletter-input-group">
+              <input type="email" name="email" id="bd-email" placeholder="your.email@example.com" required />
+              <input type="submit" value="Subscribe" />
+            </div>
+          </form>
         </div>
       </div>
     </section>
 
     <footer>
       <div class="container">
-        <p>© 2025 Years Ahead</p>
+        <p></p>
       </div>
     </footer>
   </body>
