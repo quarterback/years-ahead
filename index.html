@@ -77,8 +77,33 @@
       /* Header with gradient background */
       header {
         background: var(--bg-gradient);
-        padding: 3rem 0;
+        padding: 2rem 0 3rem;
         position: relative;
+      }
+
+      /* Email contact in header */
+      .header-email {
+        text-align: right;
+        margin-bottom: 2rem;
+      }
+
+      .header-email a {
+        color: var(--primary);
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        border: 2px solid var(--primary);
+        border-radius: 50px;
+        display: inline-block;
+        transition: all 0.3s ease;
+        background: white;
+      }
+
+      .header-email a:hover {
+        background: var(--primary);
+        color: white;
+        transform: translateY(-2px);
       }
 
       /* Decorative shapes */
@@ -139,9 +164,14 @@
       }
 
       .intro p {
-        font-size: 1.25rem;
+        font-size: 1.125rem;
         line-height: 1.8;
         color: var(--text-mid);
+        margin-bottom: 1.5rem;
+      }
+
+      .intro p:last-child {
+        margin-bottom: 0;
       }
 
       .intro strong {
@@ -443,6 +473,10 @@
           font-size: 2.5rem;
         }
 
+        .header-email {
+          text-align: center;
+        }
+
         .cta h2 {
           font-size: 2rem;
         }
@@ -472,10 +506,23 @@
   <body>
     <header>
       <div class="container">
+        <div class="header-email">
+          <a href="mailto:info@yearsahead.io">info@yearsahead.io</a>
+        </div>
         <h1>Years Ahead</h1>
         <p class="tagline">A conference for the next generation of public service delivery.</p>
       </div>
     </header>
+
+    <section class="intro">
+      <div class="container">
+        <p>In a world of constant change, technology has been at a crossroads for a long time. There's a camp still living in the past and another made up of people who grew out of it, looking for ways to use their skills for the public good. <strong>Years Ahead is about that handoff.</strong> It's about learning from what came before without getting stuck there.</p>
+        
+        <p>This is a gathering for people who want to find new ways of existing in this space, who want to define what public technology can be instead of recycling what it was. It's about what's working now, where we can do better, where the wins are, and who we've left out. It's about hearing not only from people doing the work but from the people living with its outcomes.</p>
+        
+        <p>Years Ahead has been a long time coming. The goal is to create a place to look closely at how we build for the public and what it takes to do that well. It's a chance to think differently, to share lessons learned through hard work, and to build an intentional, thoughtful space for those who are doing the work now and those who will lead it next.</p>
+      </div>
+    </section>
 
     <section class="events">
       <div class="container">
@@ -489,7 +536,7 @@
           </div>
           <div class="event-card">
             <div class="season">Fall</div>
-            <div class="location">Nordics</div>
+            <div class="location">Finland</div>
           </div>
         </div>
         <p style="text-align: center; font-size: 1.125rem; color: var(--text-mid); max-width: 700px; margin: 0 auto;">Both editions focus on how teams build capacity: how they start, what they've learned, and how they keep moving. The emphasis is on practice—delivery, organization design, tools, and the realities of public work at scale.</p>
