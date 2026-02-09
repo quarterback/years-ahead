@@ -71,10 +71,16 @@
       }
 
       /* Typography */
-      h1, h2, h3 {
+      h1 {
         font-family: var(--font-heading);
         font-weight: 900;
         line-height: 1.1;
+      }
+
+      h2, h3 {
+        font-family: var(--font-heading);
+        font-weight: 800;
+        line-height: 1.2;
       }
 
       /* Header with gradient background */
@@ -168,7 +174,7 @@
 
       .intro p {
         font-size: 1.125rem;
-        line-height: 1.8;
+        line-height: 1.75;
         color: var(--text-mid);
         margin-bottom: 1.5rem;
       }
@@ -194,33 +200,37 @@
       }
 
       .events h2 {
-        font-size: 2.5rem;
-        font-weight: 800;
+        font-size: 2.25rem;
+        font-weight: 700;
         color: var(--text-dark);
         margin-bottom: 1rem;
+        letter-spacing: -0.5px;
       }
 
       .event-details {
         max-width: 700px;
         margin: 0 auto;
         background: white;
-        border-radius: 20px;
+        border-radius: 16px;
         padding: 2.5rem;
-        border: 3px solid var(--secondary);
+        border: 2px solid var(--secondary);
         text-align: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       }
 
       .event-details h3 {
         font-family: var(--font-heading);
-        font-size: 2rem;
+        font-size: 1.75rem;
+        font-weight: 700;
         color: var(--secondary);
         margin-bottom: 1rem;
+        line-height: 1.3;
       }
 
       .event-details p {
         font-size: 1.125rem;
         color: var(--text-mid);
-        line-height: 1.8;
+        line-height: 1.75;
         margin-bottom: 1rem;
       }
 
@@ -240,11 +250,12 @@
 
       .registration h2 {
         font-family: var(--font-heading);
-        font-size: 2.5rem;
-        font-weight: 800;
+        font-size: 2.25rem;
+        font-weight: 700;
         text-align: center;
         margin-bottom: 2rem;
         color: var(--text-dark);
+        letter-spacing: -0.5px;
       }
 
       .airtable-embed {
@@ -253,54 +264,7 @@
         display: block;
       }
 
-      /* Workshop section */
-      .workshop-wrapper {
-        padding: 4rem 0;
-        background: var(--bg-light);
-      }
-
-      .workshop {
-        background: linear-gradient(135deg, #FFF9C4 0%, #FFE0B2 100%);
-        border-radius: 24px;
-        padding: 3rem;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .workshop::before {
-        content: '🚀';
-        position: absolute;
-        top: -20px;
-        right: 30px;
-        font-size: 4rem;
-        opacity: 0.2;
-        transform: rotate(15deg);
-      }
-
-      .workshop h2 {
-        font-family: var(--font-heading);
-        font-size: 2rem;
-        font-weight: 800;
-        color: var(--text-dark);
-        margin-bottom: 1.5rem;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-
-      .workshop-badge {
-        background: var(--highlight);
-        color: var(--text-dark);
-        font-size: 0.875rem;
-        padding: 0.375rem 1rem;
-        border-radius: 50px;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-family: var(--font-heading);
-      }
-
-      /* What to Expect with colorful bullets */
+      /* Event Format section with colorful bullets */
       .expect {
         padding: 4rem 0;
         background: white;
@@ -308,11 +272,12 @@
 
       .expect h2 {
         font-family: var(--font-heading);
-        font-size: 2.5rem;
-        font-weight: 800;
+        font-size: 2.25rem;
+        font-weight: 700;
         text-align: center;
         margin-bottom: 3rem;
         color: var(--text-dark);
+        letter-spacing: -0.5px;
       }
 
       .expect-grid {
@@ -324,9 +289,22 @@
       .expect-item {
         background: var(--bg-light);
         padding: 2rem;
-        border-radius: 16px;
-        border-left: 4px solid;
-        transition: transform 0.2s ease;
+        border-radius: 12px;
+        border-left: 3px solid;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .expect-item p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .expect-item strong {
+        font-size: 1.125rem;
+        font-weight: 700;
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--text-dark);
       }
 
       .expect-item:nth-child(1) { border-color: var(--primary); }
@@ -463,16 +441,6 @@
         border-top: 1px solid #E5E7EB;
       }
 
-      /* Fun animations */
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-      }
-
-      .workshop::before {
-        animation: float 3s ease-in-out infinite;
-      }
-
       /* Mobile */
       @media (max-width: 768px) {
         h1 {
@@ -489,10 +457,6 @@
 
         .expect-grid {
           grid-template-columns: 1fr;
-        }
-
-        .workshop {
-          padding: 2rem;
         }
 
         .newsletter-input-group {
@@ -534,7 +498,7 @@
     
     <p>University of Michigan</p>
     
-    <p>We're bringing students and experienced practitioners together for an afternoon dialogue. We'll share what we've learned in the trenches, examine how public services actually get built, and talk about what comes next.</p>
+    <p>We're bringing students and experienced practitioners together for an afternoon of panels, fireside conversations, and open discussions. Hear from people reflecting on their past journeys, active professionals discussing current work, and practitioners sharing hard-won lessons. The event concludes with student lightning talks where you can share your own work.</p>
     
     <p>Interested in participating? Get in touch</p>
   </div>
@@ -548,7 +512,7 @@
         <div class="event-details">
           <h3>March 27, 2025 • 1:00 - 4:30 PM</h3>
           <p><strong>University of Michigan</strong></p>
-          <p>Join us for a half-day event where we convene people from the past of civic tech with the future for open dialogue. This session will bring together experienced practitioners and emerging leaders to share insights, challenges, and visions for the future of public service delivery.</p>
+          <p>Join us for an afternoon of open dialogue between students and practitioners. The event features panel discussions with working professionals, fireside conversations, and open discussions exploring the past, present, and future of public service delivery. The afternoon concludes with a student lightning talk session where attendees can share their own projects and ideas.</p>
         </div>
       </div>
     </section>
@@ -560,33 +524,21 @@
       </div>
     </section>
 
-    <section class="workshop-wrapper">
-      <div class="container">
-        <div class="workshop">
-          <h2>
-            Workshop: Roll Your Own Digital Service
-            <span class="workshop-badge">Featured</span>
-          </h2>
-          <p>A full-day, hands-on session emphasizing how to build an internal digital services unit. Whether you're looking to start a non-profit, launch or bolster an in-house government unit, or build capacity in the private sector, we'll share frameworks, tools, and lessons from the field.</p>
-        </div>
-      </div>
-    </section>
-
     <section class="expect">
       <div class="container">
-        <h2>What to Expect</h2>
+        <h2>Event Format</h2>
         <div class="expect-grid">
           <div class="expect-item">
-            <p>Career strategy &amp; practical tips from peers &amp; leaders</p>
+            <p><strong>Panels with Working Professionals</strong><br>Hear from practitioners about their journeys before entering public service</p>
           </div>
           <div class="expect-item">
-            <p>Open discussions about civic tech is &amp; what comes next</p>
+            <p><strong>Fireside Conversations</strong><br>Active professionals discuss current work and challenges in the field</p>
           </div>
           <div class="expect-item">
-            <p>Practical sessions on delivery, collaboration, and capability-building</p>
+            <p><strong>"If I Knew Then What I Know Now"</strong><br>Open discussions with different groups reflecting on lessons learned</p>
           </div>
           <div class="expect-item">
-            <p>A community of people who are still doing the work</p>
+            <p><strong>Student Lightning Talks</strong><br>Share your projects and ideas in our closing session (sign-up available)</p>
           </div>
         </div>
       </div>
