@@ -258,10 +258,35 @@
         letter-spacing: -0.5px;
       }
 
-      .airtable-embed {
-        max-width: 100%;
-        margin: 0 auto;
-        display: block;
+      .register-button {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--purple) 100%);
+        color: white;
+        padding: 1.25rem 3rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        font-family: var(--font-heading);
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(0, 102, 204, 0.3);
+      }
+
+      .register-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(0, 102, 204, 0.4);
+      }
+
+      .registration-cta {
+        text-align: center;
+        padding: 2rem 0;
+      }
+
+      .registration-cta p {
+        font-size: 1.125rem;
+        color: var(--text-mid);
+        margin-bottom: 2rem;
+        line-height: 1.75;
       }
 
       /* Event Format section with colorful bullets */
@@ -497,7 +522,10 @@
     <section class="registration">
       <div class="container">
         <h2>Register Your Interest</h2>
-        <iframe class="airtable-embed" src="https://airtable.com/embed/app15JBRzw1KtO6J7/pagoQ51QJBYYTA4VL/form" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+        <div class="registration-cta">
+          <p>Sign up to attend Years Ahead 2026 and join the conversation.</p>
+          <a href="https://snowy-dodo-73a.notion.site/Years-Ahead-2026-61a32f4053084b5287ccc54cd1e54f60" target="_blank" rel="noopener noreferrer" class="register-button">Register Now</a>
+        </div>
       </div>
     </section>
 
