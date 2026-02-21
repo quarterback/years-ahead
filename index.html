@@ -3,22 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Years Ahead</title>
-    
-    <!-- SEO & Social -->
-    <meta name="description" content="A dialogue for students and practitioners building for the public.">
-    <meta property="og:title" content="Years Ahead">
-    <meta property="og:description" content="A dialogue for students and practitioners building for the public.">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Years Ahead">
-    <meta name="twitter:description" content="A dialogue for students and practitioners building for the public.">
-    
-    <style>
-      /* =================================
-         CUSTOM FONTS
-         ================================= */
+    <title>Years Ahead 2026</title>
 
+    <!-- SEO & Social -->
+    <meta name="description" content="Years Ahead 2026 — A conference bringing together civic tech pioneers from 18F, USDS, and Code for America with the next generation of public interest technologists. March 27, 2025 at the University of Michigan.">
+    <meta property="og:title" content="Years Ahead 2026 — Civic Tech Meets the Next Generation">
+    <meta property="og:description" content="An afternoon bringing together pioneers of digital government with students entering the field. Panel discussions, fireside conversations, and lightning talks at the University of Michigan.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Years Ahead">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Years Ahead 2026 — Civic Tech Meets the Next Generation">
+    <meta name="twitter:description" content="An afternoon bringing together pioneers of digital government with students entering the field. March 27 at the University of Michigan.">
+
+    <style>
       @font-face {
         font-family: 'PlexSoft-Black';
         src: url('/fonts/plexsoft-black.woff') format('woff');
@@ -36,21 +34,16 @@
       }
 
       :root {
-        /* FONTS */
         --font-heading: 'PlexSoft-Black', 'Avenir Next', 'Century Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
         --font-body: 'MITQuailav-Regular', 'Georgia', 'Cambria', 'Times New Roman', serif;
-        
-        /* COLORS */
-        --primary: #0066CC;        /* Bright blue */
-        --secondary: #FF0080;      /* Hot pink */
-        --accent: #00D4AA;         /* Teal */
-        --highlight: #FFE500;      /* Yellow */
-        --purple: #6B46C1;         /* Purple */
-        --bg-main: #FFFFFF;
-        --bg-light: #F7F8FA;
-        --bg-gradient: linear-gradient(135deg, #E3F2FD 0%, #FCE4EC 100%);
-        --text-dark: #0F172A;
-        --text-mid: #475569;
+        --navy: #1a2744;
+        --blue: #2c5282;
+        --text-dark: #1a202c;
+        --text-mid: #4a5568;
+        --text-light: #718096;
+        --border: #e2e8f0;
+        --bg-light: #f7fafc;
+        --bg-main: #ffffff;
       }
 
       * {
@@ -62,414 +55,226 @@
       body {
         font-family: var(--font-body);
         font-size: 18px;
-        line-height: 1.6;
+        line-height: 1.7;
         color: var(--text-dark);
         background: var(--bg-main);
-        overflow-x: hidden;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
 
-      /* Typography */
-      h1 {
+      h1, h2, h3 {
         font-family: var(--font-heading);
-        font-weight: 900;
-        line-height: 1.1;
-      }
-
-      h2, h3 {
-        font-family: var(--font-heading);
-        font-weight: 800;
         line-height: 1.2;
       }
 
-      /* Header with gradient background */
-      header {
-        background: var(--bg-gradient);
-        padding: 2rem 0 3rem;
-        position: relative;
-      }
-
-      /* Email contact in header */
-      .header-email {
-        text-align: right;
-        margin-bottom: 2rem;
-      }
-
-      .header-email a {
-        color: var(--primary);
-        text-decoration: none;
-        font-size: 1rem;
-        font-weight: 600;
-        padding: 0.5rem 1rem;
-        border: 2px solid var(--primary);
-        border-radius: 50px;
-        display: inline-block;
-        transition: all 0.3s ease;
-        background: white;
-      }
-
-      .header-email a:hover {
-        background: var(--primary);
-        color: white;
-        transform: translateY(-2px);
-      }
-
-      /* Decorative shapes */
-      header::before {
-        content: '';
-        position: absolute;
-        top: -50px;
-        right: -50px;
-        width: 200px;
-        height: 200px;
-        background: var(--secondary);
-        border-radius: 50%;
-        opacity: 0.1;
-      }
-
-      header::after {
-        content: '';
-        position: absolute;
-        bottom: -30px;
-        left: 10%;
-        width: 150px;
-        height: 150px;
-        background: var(--accent);
-        border-radius: 50%;
-        opacity: 0.08;
-      }
-
       .container {
-        max-width: 900px;
+        max-width: 800px;
         margin: 0 auto;
         padding: 0 2rem;
-        position: relative;
-        z-index: 1;
       }
 
-      h1 {
-        font-size: 3.5rem;
+      /* Header */
+      header {
+        background: var(--navy);
+        color: white;
+        padding: 5rem 0 4rem;
+      }
+
+      header h1 {
+        font-size: 3rem;
         font-weight: 900;
-        letter-spacing: -2px;
-        margin-bottom: 1rem;
-        background: linear-gradient(135deg, var(--primary) 0%, var(--purple) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .tagline {
-        font-size: 1.375rem;
-        color: var(--text-mid);
-        font-weight: 400;
-        max-width: 600px;
-      }
-
-      /* Intro section */
-      .intro {
-        padding: 4rem 0;
-        background: white;
-      }
-
-      .intro p {
-        font-size: 1.125rem;
-        line-height: 1.75;
-        color: var(--text-mid);
+        letter-spacing: -1.5px;
         margin-bottom: 1.5rem;
       }
 
-      .intro p:last-child {
-        margin-bottom: 0;
+      .subtitle {
+        font-size: 1.25rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.85);
+        max-width: 620px;
       }
 
-      .intro strong {
-        color: var(--text-dark);
-        font-weight: 700;
-      }
-
-      /* Events section with cards */
-      .events {
-        padding: 4rem 0;
-        background: var(--bg-light);
-      }
-
-      .events-header {
-        text-align: center;
-        margin-bottom: 3rem;
-      }
-
-      .events h2 {
-        font-size: 2.25rem;
-        font-weight: 700;
-        color: var(--text-dark);
-        margin-bottom: 1rem;
-        letter-spacing: -0.5px;
-      }
-
-      .event-details {
-        max-width: 700px;
-        margin: 0 auto;
-        background: white;
-        border-radius: 16px;
-        padding: 2.5rem;
-        border: 2px solid var(--secondary);
-        text-align: center;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      }
-
-      .event-details h3 {
-        font-family: var(--font-heading);
-        font-size: 1.75rem;
-        font-weight: 700;
-        color: var(--secondary);
-        margin-bottom: 1rem;
-        line-height: 1.3;
-      }
-
-      .event-details p {
-        font-size: 1.125rem;
-        color: var(--text-mid);
-        line-height: 1.75;
-        margin-bottom: 1rem;
-      }
-
-      .event-details p:last-child {
-        margin-bottom: 0;
-      }
-
-      .event-details strong {
-        color: var(--text-dark);
-      }
-
-      /* Registration form */
-      .registration {
-        padding: 4rem 0;
-        background: white;
-      }
-
-      .registration h2 {
-        font-family: var(--font-heading);
-        font-size: 2.25rem;
-        font-weight: 700;
-        text-align: center;
-        margin-bottom: 2rem;
-        color: var(--text-dark);
-        letter-spacing: -0.5px;
-      }
-
-      .airtable-embed {
-        max-width: 100%;
-        margin: 0 auto;
-        display: block;
-      }
-
-      /* Event Format section with colorful bullets */
-      .expect {
-        padding: 4rem 0;
-        background: white;
-      }
-
-      .expect h2 {
-        font-family: var(--font-heading);
-        font-size: 2.25rem;
-        font-weight: 700;
-        text-align: center;
-        margin-bottom: 3rem;
-        color: var(--text-dark);
-        letter-spacing: -0.5px;
-      }
-
-      .expect-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-      }
-
-      .expect-item {
-        background: var(--bg-light);
-        padding: 2rem;
-        border-radius: 12px;
-        border-left: 3px solid;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
-
-      .expect-item p {
-        font-size: 1rem;
+      .event-meta {
+        margin-top: 2.5rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 1.5rem;
+        color: rgba(255, 255, 255, 0.9);
         line-height: 1.6;
       }
 
-      .expect-item strong {
+      .event-meta strong {
+        color: white;
+        font-size: 1.75rem;
+        font-family: var(--font-heading);
+      }
+
+      /* About */
+      .about {
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .about p {
         font-size: 1.125rem;
-        font-weight: 700;
-        display: block;
-        margin-bottom: 0.5rem;
+        line-height: 1.8;
+        color: var(--text-mid);
+      }
+
+      /* Audience */
+      .audience {
+        padding: 4rem 0;
+        background: var(--bg-light);
+      }
+
+      .audience h2 {
+        font-size: 1.75rem;
+        font-weight: 900;
+        margin-bottom: 1.5rem;
         color: var(--text-dark);
       }
 
-      .expect-item:nth-child(1) { border-color: var(--primary); }
-      .expect-item:nth-child(2) { border-color: var(--secondary); }
-      .expect-item:nth-child(3) { border-color: var(--accent); }
-      .expect-item:nth-child(4) { border-color: var(--purple); }
-
-      .expect-item:hover {
-        transform: translateX(8px);
+      .audience ul {
+        list-style: none;
+        padding: 0;
       }
 
-      /* Call to action section */
-      .cta {
-        background: linear-gradient(135deg, var(--primary) 0%, var(--purple) 100%);
-        color: white;
-        padding: 5rem 0;
-        text-align: center;
+      .audience li {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--text-mid);
+        padding: 0.6rem 0;
+        padding-left: 1.25rem;
         position: relative;
       }
 
-      .cta::before {
-        content: '';
+      .audience li::before {
+        content: '\2014';
         position: absolute;
-        top: 0;
         left: 0;
-        right: 0;
-        bottom: 0;
-        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        opacity: 0.4;
+        color: var(--text-light);
       }
 
-      .cta-content {
+      /* Program */
+      .program {
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .program h2 {
+        font-size: 1.75rem;
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        color: var(--text-dark);
+      }
+
+      .program ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .program li {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--text-mid);
+        padding: 0.6rem 0;
+        padding-left: 1.25rem;
         position: relative;
-        z-index: 1;
       }
 
-      .cta h2 {
-        font-family: var(--font-heading);
-        font-size: 3rem;
+      .program li::before {
+        content: '\2014';
+        position: absolute;
+        left: 0;
+        color: var(--text-light);
+      }
+
+      /* Registration */
+      .registration {
+        padding: 4rem 0;
+        background: var(--bg-light);
+        text-align: center;
+      }
+
+      .registration h2 {
+        font-size: 1.75rem;
         font-weight: 900;
         margin-bottom: 1rem;
+        color: var(--text-dark);
       }
 
-      .cta p {
-        font-size: 1.375rem;
+      .registration p {
+        font-size: 1.05rem;
+        color: var(--text-mid);
         margin-bottom: 2rem;
-        opacity: 0.95;
       }
 
-      .email-button {
+      .register-button {
         display: inline-block;
-        background: white;
-        color: var(--primary);
-        padding: 1.25rem 3rem;
-        border-radius: 50px;
+        background: var(--navy);
+        color: white;
+        padding: 1rem 2.5rem;
         text-decoration: none;
         font-weight: 700;
-        font-size: 1.125rem;
+        font-size: 1.05rem;
         font-family: var(--font-heading);
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        letter-spacing: 0.5px;
+        transition: background 0.2s ease;
       }
 
-      .email-button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      .register-button:hover {
+        background: var(--blue);
       }
 
-      /* Newsletter form styling */
-      .embeddable-buttondown-form {
-        max-width: 500px;
-        margin: 0 auto;
+      /* Contact */
+      .contact {
+        background: var(--navy);
+        color: white;
+        padding: 3rem 0;
+        text-align: center;
       }
 
-      .visually-hidden {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        margin: -1px;
-        padding: 0;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        border: 0;
+      .contact p {
+        font-size: 1.05rem;
+        color: rgba(255, 255, 255, 0.75);
+        margin-bottom: 1.5rem;
       }
 
-      .newsletter-input-group {
-        display: flex;
-        gap: 0.75rem;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .newsletter-input-group input[type="email"] {
-        flex: 1;
-        min-width: 250px;
-        padding: 1rem 1.5rem;
-        border: none;
-        border-radius: 50px;
-        font-size: 1rem;
-        font-family: var(--font-body);
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      }
-
-      .newsletter-input-group input[type="email"]:focus {
-        outline: 3px solid rgba(255, 255, 255, 0.5);
-        outline-offset: 2px;
-      }
-
-      .newsletter-input-group input[type="submit"] {
+      .contact-button {
+        display: inline-block;
         background: white;
-        color: var(--primary);
-        padding: 1rem 2.5rem;
-        border: none;
-        border-radius: 50px;
+        color: var(--navy);
+        padding: 0.85rem 2rem;
+        text-decoration: none;
         font-weight: 700;
-        font-size: 1.125rem;
+        font-size: 1rem;
         font-family: var(--font-heading);
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        transition: background 0.2s ease;
       }
 
-      .newsletter-input-group input[type="submit"]:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      .contact-button:hover {
+        background: #e2e8f0;
       }
 
       /* Footer */
       footer {
-        background: white;
         padding: 2rem 0;
         text-align: center;
-        color: var(--text-mid);
-        border-top: 1px solid #E5E7EB;
+        color: var(--text-light);
+        font-size: 0.9rem;
+        border-top: 1px solid var(--border);
       }
 
       /* Mobile */
       @media (max-width: 768px) {
-        h1 {
-          font-size: 2.5rem;
+        header {
+          padding: 3rem 0;
         }
 
-        .header-email {
-          text-align: center;
+        header h1 {
+          font-size: 2.25rem;
         }
 
-        .cta h2 {
-          font-size: 2rem;
-        }
-
-        .expect-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .newsletter-input-group {
-          flex-direction: column;
-        }
-
-        .newsletter-input-group input[type="email"] {
-          min-width: 100%;
-        }
-
-        .newsletter-input-group input[type="submit"] {
-          width: 100%;
-        }
       }
     </style>
   </head>
@@ -477,69 +282,55 @@
     <header>
       <div class="container">
         <h1>Years Ahead</h1>
-        <p class="tagline">A conference for the next generation of public service delivery.</p>
+        <p class="subtitle">An opportunity for students to learn directly from practitioners who built the first generation of digital government.</p>
+        <div class="event-meta">
+          <strong>Friday March 27, 2025</strong> &middot; 1:00&ndash;5:00pm<br>
+          Ford School of Public Policy Auditorium, University of Michigan
+        </div>
       </div>
     </header>
 
-    <section class="events">
+    <section class="about">
       <div class="container">
-        <div class="events-header">
-          <h2>Spring 2025 Event</h2>
-        </div>
-        <div class="event-details">
-          <h3>March 27, 2025 • 1:00 - 4:30 PM</h3>
-          <p><strong>University of Michigan</strong></p>
-          <p>Join us for an afternoon of open dialogue between students and practitioners. The event features panel discussions with working professionals, fireside conversations, and open discussions exploring the past, present, and future of public service delivery. The afternoon concludes with a student lightning talk session where attendees can share their own projects and ideas.</p>
-        </div>
+        <p>Years Ahead brings together pioneering civic technologists - people who led digital service teams at 18F, USDS, Code for America, and state/local governments - with students entering the field. An afternoon of candid conversation about what actually happened in the first wave of government modernization and what the next generation needs to know.</p>
       </div>
     </section>
 
     <section class="registration">
       <div class="container">
-        <h2>Register Your Interest</h2>
-        <iframe class="airtable-embed" src="https://airtable.com/embed/app15JBRzw1KtO6J7/pagoQ51QJBYYTA4VL/form" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+        <h2>Register</h2>
+        <p>Sign up to attend Years Ahead and join the conversation.</p>
+        <a href="https://forms.gle/L6p3MjJ2RiS1fh5j9" target="_blank" rel="noopener noreferrer" class="register-button">Register Now</a>
       </div>
     </section>
 
-    <section class="expect">
+    <section class="audience">
       <div class="container">
-        <h2>Event Format</h2>
-        <div class="expect-grid">
-          <div class="expect-item">
-            <p><strong>Panels with Working Professionals</strong><br>Hear from practitioners about their journeys before entering public service</p>
-          </div>
-          <div class="expect-item">
-            <p><strong>Fireside Conversations</strong><br>Active professionals discuss current work and challenges in the field</p>
-          </div>
-          <div class="expect-item">
-            <p><strong>"If I Knew Then What I Know Now"</strong><br>Open discussions with different groups reflecting on lessons learned</p>
-          </div>
-          <div class="expect-item">
-            <p><strong>Student Lightning Talks</strong><br>Share your projects and ideas in our closing session (sign-up available)</p>
-          </div>
-        </div>
+        <h2>Who's coming</h2>
+        <ul>
+          <li>Veterans of 18F, US Digital Service, and early civic tech organizations</li>
+          <li>Current &amp; former practitioners who built and scaled digital teams inside bureaucracies</li>
+          <li>Students interested in how we build for and with the public</li>
+        </ul>
       </div>
     </section>
 
-    <section class="cta">
-      <div class="cta-content">
-        <div class="container">
-          <h2>Stay Informed</h2>
-          <p>Add your name to receive updates and calls for participation.</p>
-          <form
-            action="https://buttondown.com/api/emails/embed-subscribe/yearsahead"
-            method="post"
-            target="popupwindow"
-            onsubmit="window.open('https://buttondown.com/yearsahead', 'popupwindow')"
-            class="embeddable-buttondown-form"
-          >
-            <label for="bd-email" class="visually-hidden">Enter your email</label>
-            <div class="newsletter-input-group">
-              <input type="email" name="email" id="bd-email" placeholder="your.email@example.com" required />
-              <input type="submit" value="Subscribe" />
-            </div>
-          </form>
-        </div>
+    <section class="program">
+      <div class="container">
+        <h2>What you'll hear</h2>
+        <ul>
+          <li>Panel discussions with practitioners about their career paths into government technology</li>
+          <li>Fireside conversations on current challenges in digital service delivery</li>
+          <li>Small group discussions: lessons learned, what people wish they'd known starting out</li>
+          <li>Student lightning talks and project presentations</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="container">
+        <p>For questions or more information</p>
+        <a href="mailto:bronsonr@umich.edu" class="contact-button">Contact Us</a>
       </div>
     </section>
 
