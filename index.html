@@ -256,6 +256,50 @@
         background: #e2e8f0;
       }
 
+      /* Sponsors */
+      .sponsors {
+        padding: 3rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .sponsors-group {
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+
+      .sponsors-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .sponsors-label {
+        font-size: 0.85rem;
+        font-family: var(--font-body);
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--text-light);
+        margin-bottom: 1.25rem;
+      }
+
+      .sponsors-logos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2.5rem;
+      }
+
+      .sponsor-logo {
+        height: 50px;
+        width: auto;
+        opacity: 0.85;
+        transition: opacity 0.2s ease;
+      }
+
+      .sponsor-logo:hover {
+        opacity: 1;
+      }
+
       /* Footer */
       footer {
         padding: 2rem 0;
@@ -331,6 +375,25 @@
       <div class="container">
         <p>For questions or more information</p>
         <a href="mailto:bronsonr@umich.edu" class="contact-button">Contact Us</a>
+      </div>
+    </section>
+
+    <section class="sponsors">
+      <div class="container">
+        <div class="sponsors-group">
+          <h3 class="sponsors-label">Organized by</h3>
+          <div class="sponsors-logos">
+            <img src="/logos/trust-decision-engineering-lab.svg" alt="Trust &amp; Decision Engineering Lab" class="sponsor-logo">
+          </div>
+        </div>
+        <div class="sponsors-group">
+          <h3 class="sponsors-label">Supported by</h3>
+          <div class="sponsors-logos">
+            <img src="/logos/state-capacity-ai.svg" alt="State Capacity AI" class="sponsor-logo">
+            <img src="/logos/better-government-lab.svg" alt="Better Government Lab" class="sponsor-logo">
+            <img src="/logos/taubman-college.svg" alt="Taubman College of Architecture &amp; Urban Planning" class="sponsor-logo">
+          </div>
+        </div>
       </div>
     </section>
 

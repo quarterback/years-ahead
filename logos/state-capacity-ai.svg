@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" fill="none">
+  <rect x="0" y="10" width="60" height="60" rx="6" fill="#2c5282"/>
+  <text x="30" y="46" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="700" fill="#ffffff">SCAI</text>
+  <text x="72" y="35" font-family="'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" fill="#2c5282">State Capacity</text>
+  <text x="72" y="56" font-family="'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" fill="#2c5282">AI</text>
+</svg>
