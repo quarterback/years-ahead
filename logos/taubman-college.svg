@@ -1,7 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" fill="none">
-  <rect x="0" y="10" width="60" height="60" rx="6" fill="#00274C"/>
-  <text x="30" y="48" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="700" fill="#FFCB05">TC</text>
-  <text x="72" y="30" font-family="'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#00274C">Taubman College of</text>
-  <text x="72" y="48" font-family="'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#00274C">Architecture &amp;</text>
-  <text x="72" y="66" font-family="'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#00274C">Urban Planning</text>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="103" height="73" viewBox="0 0 103 73">
+  <defs>
+    <clipPath id="clip-logo-sign">
+      <rect width="103" height="73"/>
+    </clipPath>
+  </defs>
+  <g id="logo-sign" clip-path="url(#clip-logo-sign)">
+    <path id="Path_648" data-name="Path 648" d="M51.1,60.728,30.169,32.122v20.81h8.324V73.478H0V52.932H7.806v-32H0V.39H30.24L51.1,29.209,71.961.39H102.2V20.936H94.395v32H102.2V73.478H63.708V52.932h8.324V32.122L51.1,60.728Z" transform="translate(0 -0.5)"/>
+  </g>
 </svg>
