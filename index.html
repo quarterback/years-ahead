@@ -155,38 +155,56 @@
         color: var(--text-light);
       }
 
-      /* Program */
-      .program {
+      /* Schedule */
+      .schedule {
         padding: 4rem 0;
         border-bottom: 1px solid var(--border);
       }
 
-      .program h2 {
+      .schedule h2 {
         font-size: 1.75rem;
         font-weight: 900;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
         color: var(--text-dark);
       }
 
-      .program ul {
-        list-style: none;
-        padding: 0;
+      .schedule-item {
+        display: flex;
+        gap: 1.5rem;
+        padding: 1.25rem 0;
+        border-top: 1px solid var(--border);
       }
 
-      .program li {
-        font-size: 1.05rem;
-        line-height: 1.7;
-        color: var(--text-mid);
-        padding: 0.6rem 0;
-        padding-left: 1.25rem;
-        position: relative;
+      .schedule-time {
+        font-family: var(--font-heading);
+        font-size: 0.95rem;
+        color: var(--navy);
+        white-space: nowrap;
+        min-width: 100px;
+        padding-top: 0.1rem;
       }
 
-      .program li::before {
-        content: '\2014';
-        position: absolute;
-        left: 0;
+      .schedule-details h3 {
+        font-size: 1.1rem;
+        font-weight: 900;
+        color: var(--text-dark);
+        margin-bottom: 0.25rem;
+      }
+
+      .schedule-details .session-type {
+        font-size: 0.9rem;
         color: var(--text-light);
+      }
+
+      @media (max-width: 768px) {
+        .schedule-item {
+          flex-direction: column;
+          gap: 0.25rem;
+        }
+
+        .schedule-time {
+          min-width: unset;
+        }
       }
 
       /* Registration */
@@ -346,7 +364,7 @@
         <h1>Years Ahead</h1>
         <p class="subtitle">An opportunity for students to learn directly from practitioners who built the first generation of digital government.</p>
         <div class="event-meta">
-          <strong>Friday March 27, 2025</strong> &middot; 1:00&ndash;5:00pm<br>
+          <strong>Friday March 27, 2026</strong> &middot; 1:00&ndash;5:00pm<br>
           Ford School of Public Policy Auditorium, University of Michigan
         </div>
       </div>
@@ -377,15 +395,47 @@
       </div>
     </section>
 
-    <section class="program">
+    <section class="schedule">
       <div class="container">
-        <h2>What you'll hear</h2>
-        <ul>
-          <li>Panel discussions with practitioners about their career paths into government technology</li>
-          <li>Fireside conversations on current challenges in digital service delivery</li>
-          <li>Small group discussions: lessons learned, what people wish they'd known starting out</li>
-          <li>Student lightning talks and project presentations</li>
-        </ul>
+        <h2>Schedule</h2>
+        <div class="schedule-item">
+          <div class="schedule-time">1:00 PM</div>
+          <div class="schedule-details">
+            <h3>Lunch</h3>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">2:00 PM</div>
+          <div class="schedule-details">
+            <h3>Welcome &amp; Introduction</h3>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">2:15 PM</div>
+          <div class="schedule-details">
+            <h3>Participatory Design Workshop</h3>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">3:00 PM</div>
+          <div class="schedule-details">
+            <h3>What Working in Government Taught Me As A Technologist</h3>
+            <span class="session-type">Virtual Panel</span>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">4:00 PM</div>
+          <div class="schedule-details">
+            <h3>How Change Actually Works: Perspectives on Policy, Power, and What Gets Built</h3>
+            <span class="session-type">Panel</span>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">5:00 PM</div>
+          <div class="schedule-details">
+            <h3>Reception</h3>
+          </div>
+        </div>
       </div>
     </section>
 
