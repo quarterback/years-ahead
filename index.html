@@ -6,7 +6,7 @@
     <title>Years Ahead 2026</title>
 
     <!-- SEO & Social -->
-    <meta name="description" content="Years Ahead 2026 — A conference bringing together civic tech pioneers from 18F, USDS, and Code for America with the next generation of public interest technologists. March 27, 2025 at the University of Michigan.">
+    <meta name="description" content="Years Ahead 2026 — A conference bringing together civic tech pioneers from 18F, USDS, and Code for America with the next generation of public interest technologists. March 27, 2026 at the University of Michigan.">
     <meta property="og:title" content="Years Ahead 2026 — Civic Tech Meets the Next Generation">
     <meta property="og:description" content="An afternoon bringing together pioneers of digital government with students entering the field. Panel discussions, fireside conversations, and lightning talks at the University of Michigan.">
     <meta property="og:type" content="website">
@@ -34,16 +34,31 @@
       }
 
       :root {
-        --font-heading: 'PlexSoft-Black', 'Avenir Next', 'Century Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
-        --font-body: 'MITQuailav-Regular', 'Georgia', 'Cambria', 'Times New Roman', serif;
-        --navy: #1a2744;
-        --blue: #2c5282;
-        --text-dark: #1a202c;
-        --text-mid: #4a5568;
-        --text-light: #718096;
-        --border: #e2e8f0;
-        --bg-light: #f7fafc;
-        --bg-main: #ffffff;
+        --font-heading: 'PlexSoft-Black', 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-body: 'Inter', 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+        --font-serif: 'MITQuailav-Regular', 'Georgia', 'Cambria', serif;
+
+        --bg-primary: #0a0a0a;
+        --bg-elevated: #141414;
+        --bg-surface: #1a1a1a;
+        --bg-hover: #222222;
+
+        --text-primary: #ffffff;
+        --text-secondary: rgba(255, 255, 255, 0.7);
+        --text-tertiary: rgba(255, 255, 255, 0.45);
+
+        --border-subtle: rgba(255, 255, 255, 0.08);
+        --border-default: rgba(255, 255, 255, 0.12);
+        --border-strong: rgba(255, 255, 255, 0.2);
+
+        --accent: #a78bfa;
+        --accent-dim: rgba(167, 139, 250, 0.15);
+
+        --radius-sm: 8px;
+        --radius-md: 12px;
+        --radius-lg: 16px;
+        --radius-pill: 100px;
       }
 
       * {
@@ -54,235 +69,348 @@
 
       body {
         font-family: var(--font-body);
-        font-size: 18px;
-        line-height: 1.7;
-        color: var(--text-dark);
-        background: var(--bg-main);
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--text-primary);
+        background: var(--bg-primary);
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
 
       h1, h2, h3 {
         font-family: var(--font-heading);
-        line-height: 1.2;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
       }
 
       .container {
-        max-width: 800px;
+        max-width: 960px;
         margin: 0 auto;
         padding: 0 2rem;
       }
 
-      /* Header */
-      header {
-        background: var(--navy);
-        color: white;
-        padding: 5rem 0 4rem;
+      /* Nav */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        padding: 1rem 0;
+        background: rgba(10, 10, 10, 0.8);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border-subtle);
       }
 
-      header h1 {
-        font-size: 3rem;
+      nav .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .nav-logo {
+        font-family: var(--font-heading);
+        font-size: 0.95rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--text-primary);
+      }
+
+      .nav-link {
+        display: inline-block;
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-secondary);
+        text-decoration: none;
+        padding: 0.5rem 1.25rem;
+        border: 1px solid var(--border-default);
+        border-radius: var(--radius-pill);
+        transition: all 0.25s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--text-primary);
+        border-color: var(--border-strong);
+        background: var(--bg-hover);
+      }
+
+      /* Hero */
+      .hero {
+        padding: 10rem 0 6rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: -200px;
+        right: -200px;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(167, 139, 250, 0.08) 0%, transparent 70%);
+        pointer-events: none;
+      }
+
+      .badge {
+        display: inline-block;
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        background: var(--accent-dim);
+        padding: 0.4rem 1rem;
+        border-radius: var(--radius-pill);
+        border: 1px solid rgba(167, 139, 250, 0.2);
+        margin-bottom: 2rem;
+      }
+
+      .hero h1 {
+        font-size: 4.5rem;
         font-weight: 900;
-        letter-spacing: -1.5px;
+        letter-spacing: -0.03em;
+        margin-bottom: 1.5rem;
+        max-width: 700px;
+      }
+
+      .hero-subtitle {
+        font-family: var(--font-serif);
+        font-size: 1.25rem;
+        line-height: 1.7;
+        color: var(--text-secondary);
+        max-width: 560px;
+        margin-bottom: 3rem;
+      }
+
+      .hero-meta {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .meta-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .meta-label {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--text-tertiary);
+      }
+
+      .meta-value {
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        color: var(--text-primary);
+      }
+
+      /* Section shared */
+      section {
+        padding: 5rem 0;
+      }
+
+      .section-label {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--text-tertiary);
         margin-bottom: 1.5rem;
       }
 
-      .subtitle {
-        font-size: 1.25rem;
-        line-height: 1.6;
-        color: rgba(255, 255, 255, 0.85);
-        max-width: 620px;
+      .section-title {
+        font-size: 2rem;
+        font-weight: 900;
+        margin-bottom: 1.5rem;
       }
 
-      .event-meta {
-        margin-top: 2.5rem;
-        padding-top: 2rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        font-size: 1.5rem;
-        color: rgba(255, 255, 255, 0.9);
-        line-height: 1.6;
-      }
-
-      .event-meta strong {
-        color: white;
-        font-size: 1.75rem;
-        font-family: var(--font-heading);
+      .divider {
+        border: none;
+        border-top: 1px solid var(--border-subtle);
       }
 
       /* About */
       .about {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border);
+        border-top: 1px solid var(--border-subtle);
       }
 
-      .about p {
-        font-size: 1.125rem;
-        line-height: 1.8;
-        color: var(--text-mid);
-      }
-
-      /* Audience */
-      .audience {
-        padding: 4rem 0;
-        background: var(--bg-light);
-      }
-
-      .audience h2 {
-        font-size: 1.75rem;
-        font-weight: 900;
-        margin-bottom: 1.5rem;
-        color: var(--text-dark);
-      }
-
-      .audience ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      .audience li {
-        font-size: 1.05rem;
-        line-height: 1.7;
-        color: var(--text-mid);
-        padding: 0.6rem 0;
-        padding-left: 1.25rem;
-        position: relative;
-      }
-
-      .audience li::before {
-        content: '\2014';
-        position: absolute;
-        left: 0;
-        color: var(--text-light);
-      }
-
-      /* Schedule */
-      .schedule {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .schedule h2 {
-        font-size: 1.75rem;
-        font-weight: 900;
-        margin-bottom: 2rem;
-        color: var(--text-dark);
-      }
-
-      .schedule-item {
-        display: flex;
-        gap: 1.5rem;
-        padding: 1.25rem 0;
-        border-top: 1px solid var(--border);
-      }
-
-      .schedule-time {
-        font-family: var(--font-heading);
-        font-size: 0.95rem;
-        color: var(--navy);
-        white-space: nowrap;
-        min-width: 100px;
-        padding-top: 0.1rem;
-      }
-
-      .schedule-details h3 {
-        font-size: 1.1rem;
-        font-weight: 900;
-        color: var(--text-dark);
-        margin-bottom: 0.25rem;
-      }
-
-      .schedule-details .session-type {
-        font-size: 0.9rem;
-        color: var(--text-light);
-      }
-
-      @media (max-width: 768px) {
-        .schedule-item {
-          flex-direction: column;
-          gap: 0.25rem;
-        }
-
-        .schedule-time {
-          min-width: unset;
-        }
+      .about-text {
+        font-family: var(--font-serif);
+        font-size: 1.15rem;
+        line-height: 1.85;
+        color: var(--text-secondary);
+        max-width: 680px;
       }
 
       /* Registration */
       .registration {
-        padding: 4rem 0;
-        background: var(--bg-light);
+        border-top: 1px solid var(--border-subtle);
+      }
+
+      .registration-card {
+        background: var(--bg-elevated);
+        border: 1px solid var(--border-default);
+        border-radius: var(--radius-lg);
+        padding: 3rem;
         text-align: center;
       }
 
-      .registration h2 {
-        font-size: 1.75rem;
-        font-weight: 900;
-        margin-bottom: 1rem;
-        color: var(--text-dark);
+      .registration-card .section-title {
+        margin-bottom: 0.75rem;
       }
 
-      .registration p {
-        font-size: 1.05rem;
-        color: var(--text-mid);
+      .registration-card p {
+        color: var(--text-secondary);
         margin-bottom: 2rem;
       }
 
       .register-button {
         display: inline-block;
-        background: var(--navy);
-        color: white;
-        padding: 1rem 2.5rem;
+        background: var(--text-primary);
+        color: var(--bg-primary);
+        padding: 0.85rem 2.25rem;
         text-decoration: none;
         font-weight: 700;
-        font-size: 1.05rem;
+        font-size: 0.9rem;
         font-family: var(--font-heading);
-        letter-spacing: 0.5px;
-        transition: background 0.2s ease;
+        letter-spacing: 0.02em;
+        border-radius: var(--radius-pill);
+        transition: all 0.25s ease;
       }
 
       .register-button:hover {
-        background: var(--blue);
+        background: rgba(255, 255, 255, 0.85);
+        transform: translateY(-1px);
+      }
+
+      /* Audience */
+      .audience {
+        border-top: 1px solid var(--border-subtle);
+      }
+
+      .audience-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1rem;
+      }
+
+      .audience-card {
+        background: var(--bg-elevated);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-md);
+        padding: 1.75rem;
+        transition: border-color 0.25s ease;
+      }
+
+      .audience-card:hover {
+        border-color: var(--border-default);
+      }
+
+      .audience-card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--text-secondary);
+      }
+
+      /* Schedule */
+      .schedule {
+        border-top: 1px solid var(--border-subtle);
+      }
+
+      .schedule-item {
+        display: flex;
+        gap: 2rem;
+        padding: 1.5rem 0;
+        border-top: 1px solid var(--border-subtle);
+        align-items: baseline;
+        transition: background 0.2s ease;
+      }
+
+      .schedule-item:last-child {
+        border-bottom: 1px solid var(--border-subtle);
+      }
+
+      .schedule-time {
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        color: var(--text-tertiary);
+        white-space: nowrap;
+        min-width: 90px;
+        letter-spacing: 0.02em;
+      }
+
+      .schedule-details h3 {
+        font-size: 1.05rem;
+        font-weight: 900;
+        color: var(--text-primary);
+        margin-bottom: 0.2rem;
+      }
+
+      .session-type {
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        background: var(--accent-dim);
+        padding: 0.2rem 0.6rem;
+        border-radius: var(--radius-sm);
+        display: inline-block;
+        margin-top: 0.4rem;
       }
 
       /* Contact */
       .contact {
-        background: var(--navy);
-        color: white;
-        padding: 3rem 0;
+        border-top: 1px solid var(--border-subtle);
+      }
+
+      .contact-card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-lg);
+        padding: 3rem;
         text-align: center;
       }
 
-      .contact p {
-        font-size: 1.05rem;
-        color: rgba(255, 255, 255, 0.75);
+      .contact-card p {
+        color: var(--text-secondary);
         margin-bottom: 1.5rem;
       }
 
       .contact-button {
         display: inline-block;
-        background: white;
-        color: var(--navy);
-        padding: 0.85rem 2rem;
+        color: var(--text-primary);
+        padding: 0.75rem 2rem;
         text-decoration: none;
         font-weight: 700;
-        font-size: 1rem;
+        font-size: 0.85rem;
         font-family: var(--font-heading);
-        transition: background 0.2s ease;
+        letter-spacing: 0.02em;
+        border: 1px solid var(--border-default);
+        border-radius: var(--radius-pill);
+        transition: all 0.25s ease;
       }
 
       .contact-button:hover {
-        background: #e2e8f0;
+        border-color: var(--border-strong);
+        background: var(--bg-hover);
       }
 
       /* Sponsors */
       .sponsors {
-        padding: 3rem 0;
-        border-bottom: 1px solid var(--border);
+        border-top: 1px solid var(--border-subtle);
       }
 
       .sponsors-group {
-        text-align: center;
-        margin-bottom: 2.5rem;
+        margin-bottom: 3rem;
       }
 
       .sponsors-group:last-child {
@@ -290,21 +418,19 @@
       }
 
       .sponsors-label {
-        font-size: 0.85rem;
-        font-family: var(--font-body);
-        font-weight: 400;
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
         text-transform: uppercase;
-        letter-spacing: 2px;
-        color: var(--text-light);
+        letter-spacing: 0.12em;
+        color: var(--text-tertiary);
         margin-bottom: 1.25rem;
       }
 
       .sponsors-logos {
         display: flex;
-        align-items: flex-start;
-        justify-content: center;
+        align-items: center;
         flex-wrap: wrap;
-        gap: 2.5rem;
+        gap: 2rem;
       }
 
       .sponsor-item {
@@ -315,13 +441,21 @@
         text-decoration: none;
         color: inherit;
         max-width: 200px;
+        padding: 1.25rem;
+        border-radius: var(--radius-md);
+        transition: background 0.25s ease;
+      }
+
+      .sponsor-item:hover {
+        background: var(--bg-hover);
       }
 
       .sponsor-logo {
-        height: 50px;
+        height: 44px;
         width: auto;
-        opacity: 0.85;
-        transition: opacity 0.2s ease;
+        opacity: 0.7;
+        filter: brightness(0) invert(1);
+        transition: opacity 0.25s ease;
       }
 
       .sponsor-item:hover .sponsor-logo {
@@ -329,75 +463,150 @@
       }
 
       .sponsor-name {
-        font-family: var(--font-body);
-        font-size: 0.8rem;
-        color: var(--text-light);
-        margin-top: 0.5rem;
-        line-height: 1.3;
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        color: var(--text-tertiary);
+        margin-top: 0.75rem;
+        line-height: 1.4;
+        letter-spacing: 0.02em;
       }
 
       /* Footer */
       footer {
         padding: 2rem 0;
         text-align: center;
-        color: var(--text-light);
-        font-size: 0.9rem;
-        border-top: 1px solid var(--border);
+        color: var(--text-tertiary);
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.05em;
+        border-top: 1px solid var(--border-subtle);
       }
 
       /* Mobile */
       @media (max-width: 768px) {
-        header {
-          padding: 3rem 0;
+        .hero {
+          padding: 8rem 0 4rem;
         }
 
-        header h1 {
+        .hero h1 {
+          font-size: 2.75rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.1rem;
+        }
+
+        .hero-meta {
+          gap: 1.5rem;
+        }
+
+        section {
+          padding: 3.5rem 0;
+        }
+
+        .registration-card,
+        .contact-card {
+          padding: 2rem 1.5rem;
+        }
+
+        .schedule-item {
+          flex-direction: column;
+          gap: 0.25rem;
+        }
+
+        .schedule-time {
+          min-width: unset;
+        }
+
+        .audience-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .sponsors-logos {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero h1 {
           font-size: 2.25rem;
         }
 
+        .container {
+          padding: 0 1.25rem;
+        }
       }
     </style>
   </head>
   <body>
-    <header>
+    <nav>
       <div class="container">
+        <span class="nav-logo">Years Ahead</span>
+        <a href="https://forms.gle/L6p3MjJ2RiS1fh5j9" target="_blank" rel="noopener noreferrer" class="nav-link">Register</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="container">
+        <div class="badge">March 27, 2026</div>
         <h1>Years Ahead</h1>
-        <p class="subtitle">An opportunity for students to learn directly from practitioners who built the first generation of digital government.</p>
-        <div class="event-meta">
-          <strong>Friday March 27, 2026</strong> &middot; 1:00&ndash;5:00pm<br>
-          Ford School of Public Policy Auditorium, University of Michigan
+        <p class="hero-subtitle">An opportunity for students to learn directly from practitioners who built the first generation of digital government.</p>
+        <div class="hero-meta">
+          <div class="meta-item">
+            <span class="meta-label">Date</span>
+            <span class="meta-value">Friday, March 27</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Time</span>
+            <span class="meta-value">1:00 &ndash; 5:00 PM</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Location</span>
+            <span class="meta-value">Ford School, U-M</span>
+          </div>
         </div>
       </div>
     </header>
 
     <section class="about">
       <div class="container">
-        <p>Years Ahead brings together pioneering civic technologists - people who led digital service teams at 18F, USDS, Code for America, and state/local governments - with students entering the field. An afternoon of candid conversation about what actually happened in the first wave of government modernization and what the next generation needs to know.</p>
+        <span class="section-label">About</span>
+        <p class="about-text">Years Ahead brings together pioneering civic technologists&mdash;people who led digital service teams at 18F, USDS, Code for America, and state/local governments&mdash;with students entering the field. An afternoon of candid conversation about what actually happened in the first wave of government modernization and what the next generation needs to know.</p>
       </div>
     </section>
 
     <section class="registration">
       <div class="container">
-        <h2>Register</h2>
-        <p>Sign up to attend Years Ahead and join the conversation.</p>
-        <a href="https://forms.gle/L6p3MjJ2RiS1fh5j9" target="_blank" rel="noopener noreferrer" class="register-button">Register Now</a>
+        <div class="registration-card">
+          <h2 class="section-title">Register</h2>
+          <p>Sign up to attend Years Ahead and join the conversation.</p>
+          <a href="https://forms.gle/L6p3MjJ2RiS1fh5j9" target="_blank" rel="noopener noreferrer" class="register-button">Register Now</a>
+        </div>
       </div>
     </section>
 
     <section class="audience">
       <div class="container">
-        <h2>Who's coming</h2>
-        <ul>
-          <li>Veterans of 18F, US Digital Service, and early civic tech organizations</li>
-          <li>Current &amp; former practitioners who built and scaled digital teams inside bureaucracies</li>
-          <li>Students interested in how we build for and with the public</li>
-        </ul>
+        <span class="section-label">Who's Coming</span>
+        <h2 class="section-title">The people in the room</h2>
+        <div class="audience-grid">
+          <div class="audience-card">
+            <p>Veterans of 18F, US Digital Service, and early civic tech organizations</p>
+          </div>
+          <div class="audience-card">
+            <p>Current &amp; former practitioners who built and scaled digital teams inside bureaucracies</p>
+          </div>
+          <div class="audience-card">
+            <p>Students interested in how we build for and with the public</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="schedule">
       <div class="container">
-        <h2>Schedule</h2>
+        <span class="section-label">Schedule</span>
+        <h2 class="section-title">Agenda</h2>
         <div class="schedule-item">
           <div class="schedule-time">1:00 PM</div>
           <div class="schedule-details">
@@ -447,8 +656,10 @@
 
     <section class="contact">
       <div class="container">
-        <p>For questions or more information</p>
-        <a href="mailto:bronsonr@umich.edu" class="contact-button">Contact Us</a>
+        <div class="contact-card">
+          <p>For questions or more information</p>
+          <a href="mailto:bronsonr@umich.edu" class="contact-button">Contact Us</a>
+        </div>
       </div>
     </section>
 
@@ -485,7 +696,7 @@
 
     <footer>
       <div class="container">
-        <p></p>
+        <p>Years Ahead 2026</p>
       </div>
     </footer>
   </body>
