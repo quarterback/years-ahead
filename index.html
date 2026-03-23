@@ -323,41 +323,50 @@
         color: var(--text-tertiary);
       }
 
-      /* Contact */
-      .contact {
+      /* Reception */
+      .reception {
         border-bottom: 1px solid var(--border-subtle);
       }
 
-      .contact-card {
+      .reception-card {
         background: var(--bg-surface);
         border: 1px solid var(--border-subtle);
         border-radius: var(--radius-lg);
-        padding: 3rem;
-        text-align: center;
+        padding: 2.5rem;
       }
 
-      .contact-card p {
+      .reception-details {
+        font-size: 1rem;
+        line-height: 1.7;
         color: var(--text-secondary);
         margin-bottom: 1.5rem;
+        max-width: 640px;
       }
 
-      .contact-button {
+      .reception-meta {
+        display: flex;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+      }
+
+      .reception-button {
         display: inline-block;
-        color: var(--text-primary);
+        color: #ffffff;
+        background: var(--accent);
         padding: 0.75rem 2rem;
         text-decoration: none;
         font-weight: 700;
         font-size: 0.85rem;
         font-family: var(--font-heading);
         letter-spacing: 0.02em;
-        border: 1px solid var(--border-default);
+        border: 1px solid var(--accent);
         border-radius: var(--radius-pill);
         transition: all 0.25s ease;
       }
 
-      .contact-button:hover {
-        border-color: var(--border-strong);
-        background: var(--bg-hover);
+      .reception-button:hover {
+        opacity: 0.9;
       }
 
       /* Sponsors */
@@ -434,6 +443,16 @@
         font-family: var(--font-mono);
         font-size: 0.72rem;
         letter-spacing: 0.05em;
+      }
+
+      .footer-link {
+        color: var(--text-tertiary);
+        text-decoration: none;
+        transition: color 0.25s ease;
+      }
+
+      .footer-link:hover {
+        color: var(--text-secondary);
       }
 
       /* Mobile */
@@ -564,23 +583,27 @@
             <div class="schedule-speakers">Aidan Sova, John Buckley, Kate Green, and Alan Brouilette</div>
           </div>
 
-          <div class="schedule-card">
-            <div class="schedule-card-header">
-              <span class="schedule-time">5:00 PM</span>
-            </div>
-            <h3>Networking Reception</h3>
-            <p>Becky Blank Great Hall, Weill Hall, 735 S. State Street, Ann Arbor</p>
-            <p>Special guests from Civilla Detroit and the Public Policy Lab. Light refreshments served.</p>
-          </div>
         </div>
       </div>
     </section>
 
-    <section class="contact">
+    <section class="reception">
       <div class="container">
-        <div class="contact-card">
-          <p>For questions or more information</p>
-          <a href="mailto:bronsonr@umich.edu" class="contact-button">Contact Us</a>
+        <span class="section-label">After the Conference</span>
+        <h2 class="section-title">Networking Reception</h2>
+        <div class="reception-card">
+          <p class="reception-details">Join us after the conference for a networking reception. You will be able to engage with event participants and special guests from Civilla Detroit and the Public Policy Lab in New York. Light refreshments will be served.</p>
+          <div class="reception-meta">
+            <div class="meta-item">
+              <span class="meta-label">When</span>
+              <span class="meta-value">Friday, March 27, 5:00 PM to 6:00 PM</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Where</span>
+              <span class="meta-value">Becky Blank Great Hall, Weill Hall, 735 S. State Street, Ann Arbor, MI 48109</span>
+            </div>
+          </div>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGUs-mxKOElhjzxXICo8fe7uPqwzluJJba-5qFFvlS9AaiVg/viewform" target="_blank" rel="noopener noreferrer" class="reception-button">RSVP for the Reception</a>
         </div>
       </div>
     </section>
@@ -588,17 +611,12 @@
     <section class="sponsors">
       <div class="container">
         <div class="sponsors-group">
-          <h3 class="sponsors-label">Organized by</h3>
-          <div class="sponsors-logos">
-            <div class="sponsor-item">
-              <img src="/logos/public-capacity-lab.svg" alt="Public Capacity Lab" class="sponsor-logo">
-              <span class="sponsor-name">Public Capacity Lab</span>
-            </div>
-          </div>
-        </div>
-        <div class="sponsors-group">
           <h3 class="sponsors-label">Co-sponsors</h3>
           <div class="sponsors-logos">
+            <a href="https://publiccapacity.org" target="_blank" rel="noopener noreferrer" class="sponsor-item">
+              <img src="/logos/public-capacity-lab.svg" alt="Public Capacity Lab" class="sponsor-logo">
+              <span class="sponsor-name">Public Capacity Lab</span>
+            </a>
             <a href="https://fordschool.umich.edu/" target="_blank" rel="noopener noreferrer" class="sponsor-item">
               <img src="/logos/ford-school.png" alt="Ford School of Public Policy" class="sponsor-logo">
               <span class="sponsor-name">Gerald R. Ford School of Public Policy</span>
@@ -622,7 +640,7 @@
 
     <footer>
       <div class="container">
-        <p>Years Ahead 2026</p>
+        <p>Years Ahead 2026 &middot; <a href="mailto:bronsonr@umich.edu" class="footer-link">Contact</a></p>
       </div>
     </footer>
   </body>
