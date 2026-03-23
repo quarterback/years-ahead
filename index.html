@@ -16,44 +16,34 @@
     <meta name="twitter:title" content="Years Ahead 2026 — Civic Tech Meets the Next Generation">
     <meta name="twitter:description" content="An afternoon bringing together pioneers of digital government with students entering the field. March 27 at the University of Michigan.">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <style>
-      @font-face {
-        font-family: 'PlexSoft-Black';
-        src: url('/fonts/plexsoft-black.woff') format('woff');
-        font-weight: 900;
-        font-style: normal;
-        font-display: swap;
-      }
-
-      @font-face {
-        font-family: 'MITQuailav-Regular';
-        src: url('/fonts/mit-quailav-regular.woff') format('woff');
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-      }
-
       :root {
-        --font-heading: 'PlexSoft-Black', 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-        --font-body: 'Inter', 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
-        --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
-        --font-serif: 'MITQuailav-Regular', 'Georgia', 'Cambria', serif;
+        --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
 
-        --bg-primary: #0a0a0a;
-        --bg-elevated: #141414;
-        --bg-surface: #1a1a1a;
-        --bg-hover: #222222;
+        --bg-primary: #ffffff;
+        --bg-surface: #f8f9fa;
+        --bg-elevated: #f1f3f5;
+        --bg-hover: #e9ecef;
+        --bg-dark: #111111;
 
-        --text-primary: #ffffff;
-        --text-secondary: rgba(255, 255, 255, 0.7);
-        --text-tertiary: rgba(255, 255, 255, 0.45);
+        --text-primary: #111111;
+        --text-secondary: #495057;
+        --text-tertiary: #868e96;
 
-        --border-subtle: rgba(255, 255, 255, 0.08);
-        --border-default: rgba(255, 255, 255, 0.12);
-        --border-strong: rgba(255, 255, 255, 0.2);
+        --border-subtle: #e9ecef;
+        --border-default: #dee2e6;
+        --border-strong: #ced4da;
 
-        --accent: #a78bfa;
-        --accent-dim: rgba(167, 139, 250, 0.15);
+        --accent: #5746af;
+        --accent-light: #f3f0ff;
+        --accent-border: #d0bfff;
 
         --radius-sm: 8px;
         --radius-md: 12px;
@@ -97,7 +87,7 @@
         right: 0;
         z-index: 100;
         padding: 1rem 0;
-        background: rgba(10, 10, 10, 0.8);
+        background: rgba(255, 255, 255, 0.85);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         border-bottom: 1px solid var(--border-subtle);
@@ -112,7 +102,8 @@
       .nav-logo {
         font-family: var(--font-heading);
         font-size: 0.95rem;
-        letter-spacing: 0.05em;
+        font-weight: 800;
+        letter-spacing: 0.02em;
         text-transform: uppercase;
         color: var(--text-primary);
       }
@@ -120,9 +111,9 @@
       .nav-link {
         display: inline-block;
         font-family: var(--font-mono);
-        font-size: 0.8rem;
+        font-size: 0.78rem;
         text-transform: uppercase;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.06em;
         color: var(--text-secondary);
         text-decoration: none;
         padding: 0.5rem 1.25rem;
@@ -134,25 +125,13 @@
       .nav-link:hover {
         color: var(--text-primary);
         border-color: var(--border-strong);
-        background: var(--bg-hover);
+        background: var(--bg-surface);
       }
 
       /* Hero */
       .hero {
-        padding: 10rem 0 6rem;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero::before {
-        content: '';
-        position: absolute;
-        top: -200px;
-        right: -200px;
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(circle, rgba(167, 139, 250, 0.08) 0%, transparent 70%);
-        pointer-events: none;
+        padding: 9rem 0 5rem;
+        border-bottom: 1px solid var(--border-subtle);
       }
 
       .badge {
@@ -162,45 +141,46 @@
         text-transform: uppercase;
         letter-spacing: 0.1em;
         color: var(--accent);
-        background: var(--accent-dim);
+        background: var(--accent-light);
         padding: 0.4rem 1rem;
         border-radius: var(--radius-pill);
-        border: 1px solid rgba(167, 139, 250, 0.2);
+        border: 1px solid var(--accent-border);
         margin-bottom: 2rem;
       }
 
       .hero h1 {
-        font-size: 4.5rem;
+        font-size: 4.25rem;
         font-weight: 900;
-        letter-spacing: -0.03em;
+        letter-spacing: -0.035em;
         margin-bottom: 1.5rem;
         max-width: 700px;
+        color: var(--text-primary);
       }
 
       .hero-subtitle {
-        font-family: var(--font-serif);
-        font-size: 1.25rem;
+        font-size: 1.2rem;
         line-height: 1.7;
         color: var(--text-secondary);
         max-width: 560px;
         margin-bottom: 3rem;
+        font-weight: 400;
       }
 
       .hero-meta {
         display: flex;
-        gap: 2rem;
+        gap: 2.5rem;
         flex-wrap: wrap;
       }
 
       .meta-item {
         display: flex;
         flex-direction: column;
-        gap: 0.25rem;
+        gap: 0.3rem;
       }
 
       .meta-label {
         font-family: var(--font-mono);
-        font-size: 0.7rem;
+        font-size: 0.68rem;
         text-transform: uppercase;
         letter-spacing: 0.12em;
         color: var(--text-tertiary);
@@ -209,6 +189,7 @@
       .meta-value {
         font-family: var(--font-heading);
         font-size: 1rem;
+        font-weight: 700;
         color: var(--text-primary);
       }
 
@@ -219,44 +200,40 @@
 
       .section-label {
         font-family: var(--font-mono);
-        font-size: 0.7rem;
+        font-size: 0.68rem;
         text-transform: uppercase;
         letter-spacing: 0.12em;
         color: var(--text-tertiary);
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
       }
 
       .section-title {
         font-size: 2rem;
         font-weight: 900;
         margin-bottom: 1.5rem;
-      }
-
-      .divider {
-        border: none;
-        border-top: 1px solid var(--border-subtle);
+        letter-spacing: -0.025em;
       }
 
       /* About */
       .about {
-        border-top: 1px solid var(--border-subtle);
+        border-bottom: 1px solid var(--border-subtle);
       }
 
       .about-text {
-        font-family: var(--font-serif);
-        font-size: 1.15rem;
-        line-height: 1.85;
+        font-size: 1.1rem;
+        line-height: 1.8;
         color: var(--text-secondary);
         max-width: 680px;
       }
 
       /* Registration */
       .registration {
-        border-top: 1px solid var(--border-subtle);
+        border-bottom: 1px solid var(--border-subtle);
+        background: var(--bg-surface);
       }
 
       .registration-card {
-        background: var(--bg-elevated);
+        background: var(--bg-primary);
         border: 1px solid var(--border-default);
         border-radius: var(--radius-lg);
         padding: 3rem;
@@ -274,8 +251,8 @@
 
       .register-button {
         display: inline-block;
-        background: var(--text-primary);
-        color: var(--bg-primary);
+        background: var(--bg-dark);
+        color: #ffffff;
         padding: 0.85rem 2.25rem;
         text-decoration: none;
         font-weight: 700;
@@ -287,13 +264,13 @@
       }
 
       .register-button:hover {
-        background: rgba(255, 255, 255, 0.85);
+        background: #333333;
         transform: translateY(-1px);
       }
 
       /* Audience */
       .audience {
-        border-top: 1px solid var(--border-subtle);
+        border-bottom: 1px solid var(--border-subtle);
       }
 
       .audience-grid {
@@ -303,7 +280,7 @@
       }
 
       .audience-card {
-        background: var(--bg-elevated);
+        background: var(--bg-surface);
         border: 1px solid var(--border-subtle);
         border-radius: var(--radius-md);
         padding: 1.75rem;
@@ -322,54 +299,87 @@
 
       /* Schedule */
       .schedule {
-        border-top: 1px solid var(--border-subtle);
-      }
-
-      .schedule-item {
-        display: flex;
-        gap: 2rem;
-        padding: 1.5rem 0;
-        border-top: 1px solid var(--border-subtle);
-        align-items: baseline;
-        transition: background 0.2s ease;
-      }
-
-      .schedule-item:last-child {
         border-bottom: 1px solid var(--border-subtle);
+        background: var(--bg-surface);
+      }
+
+      .schedule-grid {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .schedule-card {
+        background: var(--bg-primary);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-md);
+        padding: 1.75rem 2rem;
+        transition: border-color 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .schedule-card:hover {
+        border-color: var(--border-default);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      }
+
+      .schedule-card-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 0.75rem;
+        flex-wrap: wrap;
       }
 
       .schedule-time {
         font-family: var(--font-mono);
-        font-size: 0.85rem;
+        font-size: 0.78rem;
         color: var(--text-tertiary);
         white-space: nowrap;
-        min-width: 90px;
         letter-spacing: 0.02em;
-      }
-
-      .schedule-details h3 {
-        font-size: 1.05rem;
-        font-weight: 900;
-        color: var(--text-primary);
-        margin-bottom: 0.2rem;
+        background: var(--bg-surface);
+        padding: 0.25rem 0.75rem;
+        border-radius: var(--radius-sm);
       }
 
       .session-type {
         font-family: var(--font-mono);
-        font-size: 0.72rem;
+        font-size: 0.7rem;
         text-transform: uppercase;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.08em;
         color: var(--accent);
-        background: var(--accent-dim);
-        padding: 0.2rem 0.6rem;
+        background: var(--accent-light);
+        padding: 0.25rem 0.65rem;
         border-radius: var(--radius-sm);
-        display: inline-block;
-        margin-top: 0.4rem;
+        border: 1px solid var(--accent-border);
+      }
+
+      .schedule-card h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        letter-spacing: -0.01em;
+        margin-bottom: 0.5rem;
+      }
+
+      .schedule-card p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: var(--text-secondary);
+      }
+
+      .schedule-card.break-card {
+        background: transparent;
+        border-style: dashed;
+        border-color: var(--border-subtle);
+      }
+
+      .schedule-card.break-card h3 {
+        font-weight: 600;
+        color: var(--text-tertiary);
       }
 
       /* Contact */
       .contact {
-        border-top: 1px solid var(--border-subtle);
+        border-bottom: 1px solid var(--border-subtle);
       }
 
       .contact-card {
@@ -406,7 +416,7 @@
 
       /* Sponsors */
       .sponsors {
-        border-top: 1px solid var(--border-subtle);
+        border-bottom: 1px solid var(--border-subtle);
       }
 
       .sponsors-group {
@@ -419,7 +429,7 @@
 
       .sponsors-label {
         font-family: var(--font-mono);
-        font-size: 0.7rem;
+        font-size: 0.68rem;
         text-transform: uppercase;
         letter-spacing: 0.12em;
         color: var(--text-tertiary);
@@ -430,7 +440,7 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        gap: 2rem;
+        gap: 1.5rem;
       }
 
       .sponsor-item {
@@ -447,14 +457,15 @@
       }
 
       .sponsor-item:hover {
-        background: var(--bg-hover);
+        background: var(--bg-surface);
       }
 
       .sponsor-logo {
-        height: 44px;
+        height: 48px;
         width: auto;
-        opacity: 0.7;
-        filter: brightness(0) invert(1);
+        max-width: 160px;
+        object-fit: contain;
+        opacity: 0.85;
         transition: opacity 0.25s ease;
       }
 
@@ -463,12 +474,10 @@
       }
 
       .sponsor-name {
-        font-family: var(--font-mono);
-        font-size: 0.7rem;
+        font-size: 0.78rem;
         color: var(--text-tertiary);
         margin-top: 0.75rem;
         line-height: 1.4;
-        letter-spacing: 0.02em;
       }
 
       /* Footer */
@@ -479,13 +488,12 @@
         font-family: var(--font-mono);
         font-size: 0.72rem;
         letter-spacing: 0.05em;
-        border-top: 1px solid var(--border-subtle);
       }
 
       /* Mobile */
       @media (max-width: 768px) {
         .hero {
-          padding: 8rem 0 4rem;
+          padding: 7rem 0 3.5rem;
         }
 
         .hero h1 {
@@ -493,7 +501,7 @@
         }
 
         .hero-subtitle {
-          font-size: 1.1rem;
+          font-size: 1.05rem;
         }
 
         .hero-meta {
@@ -509,21 +517,16 @@
           padding: 2rem 1.5rem;
         }
 
-        .schedule-item {
-          flex-direction: column;
-          gap: 0.25rem;
-        }
-
-        .schedule-time {
-          min-width: unset;
-        }
-
         .audience-grid {
           grid-template-columns: 1fr;
         }
 
         .sponsors-logos {
           justify-content: center;
+        }
+
+        .schedule-card {
+          padding: 1.5rem;
         }
       }
 
@@ -607,47 +610,60 @@
       <div class="container">
         <span class="section-label">Schedule</span>
         <h2 class="section-title">Agenda</h2>
-        <div class="schedule-item">
-          <div class="schedule-time">1:00 PM</div>
-          <div class="schedule-details">
+        <div class="schedule-grid">
+          <div class="schedule-card break-card">
+            <div class="schedule-card-header">
+              <span class="schedule-time">1:00 PM</span>
+            </div>
             <h3>Lunch</h3>
           </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">2:00 PM</div>
-          <div class="schedule-details">
+
+          <div class="schedule-card">
+            <div class="schedule-card-header">
+              <span class="schedule-time">2:00 PM</span>
+            </div>
             <h3>Welcome &amp; Introduction</h3>
+            <p>Opening remarks and framing for the afternoon.</p>
           </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">2:15 PM</div>
-          <div class="schedule-details">
+
+          <div class="schedule-card">
+            <div class="schedule-card-header">
+              <span class="schedule-time">2:15 PM</span>
+              <span class="session-type">Virtual Panel</span>
+            </div>
             <h3>What Working in Government Taught Me As A Technologist</h3>
-            <span class="session-type">Virtual Panel</span>
+            <p>Practitioners from 18F, USDS, and Code for America reflect on lessons learned building technology inside government.</p>
           </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">3:00 PM</div>
-          <div class="schedule-details">
+
+          <div class="schedule-card">
+            <div class="schedule-card-header">
+              <span class="schedule-time">3:00 PM</span>
+            </div>
             <h3>Lightning Talks</h3>
+            <p>Short, focused presentations on current projects and emerging ideas in civic technology.</p>
           </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">3:30 PM</div>
-          <div class="schedule-details">
+
+          <div class="schedule-card">
+            <div class="schedule-card-header">
+              <span class="schedule-time">3:30 PM</span>
+            </div>
             <h3>Participatory Design Workshop</h3>
+            <p>A hands-on session exploring how to design public services with the communities they serve.</p>
           </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">4:00 PM</div>
-          <div class="schedule-details">
+
+          <div class="schedule-card">
+            <div class="schedule-card-header">
+              <span class="schedule-time">4:00 PM</span>
+              <span class="session-type">Panel</span>
+            </div>
             <h3>How Change Actually Works: Perspectives on Policy, Power, and What Gets Built</h3>
-            <span class="session-type">Panel</span>
+            <p>A candid conversation about navigating bureaucracy, building coalitions, and making lasting change in public institutions.</p>
           </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">5:00 PM</div>
-          <div class="schedule-details">
+
+          <div class="schedule-card break-card">
+            <div class="schedule-card-header">
+              <span class="schedule-time">5:00 PM</span>
+            </div>
             <h3>Reception</h3>
           </div>
         </div>
@@ -677,13 +693,17 @@
         <div class="sponsors-group">
           <h3 class="sponsors-label">Co-sponsors</h3>
           <div class="sponsors-logos">
+            <a href="https://fordschool.umich.edu/" target="_blank" rel="noopener noreferrer" class="sponsor-item">
+              <img src="/logos/ford-school.svg" alt="Ford School of Public Policy" class="sponsor-logo">
+              <span class="sponsor-name">Gerald R. Ford School of Public Policy</span>
+            </a>
             <a href="https://www.bettergovernmentlab.org/" target="_blank" rel="noopener noreferrer" class="sponsor-item">
               <img src="/logos/better-government-lab.png" alt="Better Government Lab" class="sponsor-logo">
-              <span class="sponsor-name">Better Government Lab at the Ford School of Public Policy</span>
+              <span class="sponsor-name">Better Government Lab</span>
             </a>
             <a href="https://taubmancollege.umich.edu/academics/urban-and-regional-planning/bachelor-of-science-in-urban-technology/" target="_blank" rel="noopener noreferrer" class="sponsor-item">
               <img src="/logos/taubman-college.png" alt="Taubman College of Architecture &amp; Urban Planning" class="sponsor-logo">
-              <span class="sponsor-name">Urban Technology at the Taubman College of Architecture &amp; Urban Planning</span>
+              <span class="sponsor-name">Urban Technology at Taubman College</span>
             </a>
             <a href="https://statecapacity.ai/" target="_blank" rel="noopener noreferrer" class="sponsor-item">
               <img src="/logos/state-capacity-ai.svg" alt="State Capacity AI" class="sponsor-logo">
