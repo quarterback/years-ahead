@@ -6,7 +6,7 @@
     <title>Years Ahead 2026</title>
 
     <!-- SEO & Social -->
-    <meta name="description" content="Years Ahead 2026 — A conference bringing together civic tech pioneers from 18F, USDS, and Code for America with the next generation of public interest technologists. March 27, 2025 at the University of Michigan.">
+    <meta name="description" content="Years Ahead 2026 — A conference bringing together civic tech pioneers from 18F, USDS, and Code for America with the next generation of public interest technologists. March 27, 2026 at the University of Michigan.">
     <meta property="og:title" content="Years Ahead 2026 — Civic Tech Meets the Next Generation">
     <meta property="og:description" content="An afternoon bringing together pioneers of digital government with students entering the field. Panel discussions, fireside conversations, and lightning talks at the University of Michigan.">
     <meta property="og:type" content="website">
@@ -16,34 +16,39 @@
     <meta name="twitter:title" content="Years Ahead 2026 — Civic Tech Meets the Next Generation">
     <meta name="twitter:description" content="An afternoon bringing together pioneers of digital government with students entering the field. March 27 at the University of Michigan.">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <style>
-      @font-face {
-        font-family: 'PlexSoft-Black';
-        src: url('/fonts/plexsoft-black.woff') format('woff');
-        font-weight: 900;
-        font-style: normal;
-        font-display: swap;
-      }
-
-      @font-face {
-        font-family: 'MITQuailav-Regular';
-        src: url('/fonts/mit-quailav-regular.woff') format('woff');
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-      }
-
       :root {
-        --font-heading: 'PlexSoft-Black', 'Avenir Next', 'Century Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
-        --font-body: 'MITQuailav-Regular', 'Georgia', 'Cambria', 'Times New Roman', serif;
-        --navy: #1a2744;
-        --blue: #2c5282;
-        --text-dark: #1a202c;
-        --text-mid: #4a5568;
-        --text-light: #718096;
-        --border: #e2e8f0;
-        --bg-light: #f7fafc;
-        --bg-main: #ffffff;
+        --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+
+        --bg-primary: #ffffff;
+        --bg-surface: #f8f9fa;
+        --bg-elevated: #f1f3f5;
+        --bg-hover: #e9ecef;
+        --bg-dark: #111111;
+
+        --text-primary: #111111;
+        --text-secondary: #495057;
+        --text-tertiary: #868e96;
+
+        --border-subtle: #e9ecef;
+        --border-default: #dee2e6;
+        --border-strong: #ced4da;
+
+        --accent: #5746af;
+        --accent-light: #f3f0ff;
+        --accent-border: #d0bfff;
+
+        --radius-sm: 8px;
+        --radius-md: 12px;
+        --radius-lg: 16px;
+        --radius-pill: 100px;
       }
 
       * {
@@ -54,235 +59,323 @@
 
       body {
         font-family: var(--font-body);
-        font-size: 18px;
-        line-height: 1.7;
-        color: var(--text-dark);
-        background: var(--bg-main);
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--text-primary);
+        background: var(--bg-primary);
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
 
       h1, h2, h3 {
         font-family: var(--font-heading);
-        line-height: 1.2;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
       }
 
       .container {
-        max-width: 800px;
+        max-width: 960px;
         margin: 0 auto;
         padding: 0 2rem;
       }
 
-      /* Header */
-      header {
-        background: var(--navy);
-        color: white;
-        padding: 5rem 0 4rem;
+      /* Nav */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        padding: 1rem 0;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border-subtle);
       }
 
-      header h1 {
-        font-size: 3rem;
-        font-weight: 900;
-        letter-spacing: -1.5px;
-        margin-bottom: 1.5rem;
+      nav .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
 
-      .subtitle {
-        font-size: 1.25rem;
-        line-height: 1.6;
-        color: rgba(255, 255, 255, 0.85);
-        max-width: 620px;
-      }
-
-      .event-meta {
-        margin-top: 2.5rem;
-        padding-top: 2rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        font-size: 1.5rem;
-        color: rgba(255, 255, 255, 0.9);
-        line-height: 1.6;
-      }
-
-      .event-meta strong {
-        color: white;
-        font-size: 1.75rem;
+      .nav-logo {
         font-family: var(--font-heading);
+        font-size: 0.95rem;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: var(--text-primary);
+      }
+
+      .nav-link {
+        display: inline-block;
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--text-secondary);
+        text-decoration: none;
+        padding: 0.5rem 1.25rem;
+        border: 1px solid var(--border-default);
+        border-radius: var(--radius-pill);
+        transition: all 0.25s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--text-primary);
+        border-color: var(--border-strong);
+        background: var(--bg-surface);
+      }
+
+      /* Hero */
+      .hero {
+        padding: 9rem 0 5rem;
+        border-bottom: 1px solid var(--border-subtle);
+      }
+
+      .badge {
+        display: inline-block;
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 0.4rem 1rem;
+        border-radius: var(--radius-pill);
+        border: 1px solid var(--accent-border);
+        margin-bottom: 2rem;
+      }
+
+      .hero h1 {
+        font-size: 4.25rem;
+        font-weight: 900;
+        letter-spacing: -0.035em;
+        margin-bottom: 1.5rem;
+        max-width: 700px;
+        color: var(--text-primary);
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem;
+        line-height: 1.7;
+        color: var(--text-secondary);
+        max-width: 560px;
+        margin-bottom: 3rem;
+        font-weight: 400;
+      }
+
+      .hero-meta {
+        display: flex;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+      }
+
+      .meta-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+
+      .meta-label {
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--text-tertiary);
+      }
+
+      .meta-value {
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--text-primary);
+      }
+
+      /* Section shared */
+      section {
+        padding: 5rem 0;
+      }
+
+      .section-label {
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--text-tertiary);
+        margin-bottom: 1rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.025em;
       }
 
       /* About */
       .about {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid var(--border-subtle);
       }
 
-      .about p {
-        font-size: 1.125rem;
+      .about-text {
+        font-size: 1.1rem;
         line-height: 1.8;
-        color: var(--text-mid);
+        color: var(--text-secondary);
+        max-width: 680px;
       }
 
-      /* Audience */
-      .audience {
-        padding: 4rem 0;
-        background: var(--bg-light);
+      .schedule-speakers {
+        font-size: 0.88rem;
+        color: var(--text-tertiary);
+        margin-top: 0.35rem;
+        font-weight: 500;
       }
 
-      .audience h2 {
-        font-size: 1.75rem;
-        font-weight: 900;
-        margin-bottom: 1.5rem;
-        color: var(--text-dark);
+      .schedule-card p a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
       }
 
-      .audience ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      .audience li {
-        font-size: 1.05rem;
-        line-height: 1.7;
-        color: var(--text-mid);
-        padding: 0.6rem 0;
-        padding-left: 1.25rem;
-        position: relative;
-      }
-
-      .audience li::before {
-        content: '\2014';
-        position: absolute;
-        left: 0;
-        color: var(--text-light);
+      .schedule-card p a:hover {
+        text-decoration: underline;
       }
 
       /* Schedule */
       .schedule {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid var(--border-subtle);
+        background: var(--bg-surface);
       }
 
-      .schedule h2 {
-        font-size: 1.75rem;
-        font-weight: 900;
-        margin-bottom: 2rem;
-        color: var(--text-dark);
+      .schedule-grid {
+        display: grid;
+        gap: 1rem;
       }
 
-      .schedule-item {
+      .schedule-card {
+        background: var(--bg-primary);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-md);
+        padding: 1.75rem 2rem;
+        transition: border-color 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .schedule-card:hover {
+        border-color: var(--border-default);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      }
+
+      .schedule-card-header {
         display: flex;
-        gap: 1.5rem;
-        padding: 1.25rem 0;
-        border-top: 1px solid var(--border);
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 0.75rem;
+        flex-wrap: wrap;
       }
 
       .schedule-time {
-        font-family: var(--font-heading);
-        font-size: 0.95rem;
-        color: var(--navy);
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        color: var(--text-tertiary);
         white-space: nowrap;
-        min-width: 100px;
-        padding-top: 0.1rem;
+        letter-spacing: 0.02em;
+        background: var(--bg-surface);
+        padding: 0.25rem 0.75rem;
+        border-radius: var(--radius-sm);
       }
 
-      .schedule-details h3 {
+      .session-type {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 0.25rem 0.65rem;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--accent-border);
+      }
+
+      .schedule-card h3 {
         font-size: 1.1rem;
-        font-weight: 900;
-        color: var(--text-dark);
-        margin-bottom: 0.25rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        letter-spacing: -0.01em;
+        margin-bottom: 0.5rem;
       }
 
-      .schedule-details .session-type {
+      .schedule-card p {
         font-size: 0.9rem;
-        color: var(--text-light);
+        line-height: 1.6;
+        color: var(--text-secondary);
       }
 
-      @media (max-width: 768px) {
-        .schedule-item {
-          flex-direction: column;
-          gap: 0.25rem;
-        }
-
-        .schedule-time {
-          min-width: unset;
-        }
+      .schedule-card.break-card {
+        background: transparent;
+        border-style: dashed;
+        border-color: var(--border-subtle);
       }
 
-      /* Registration */
-      .registration {
-        padding: 4rem 0;
-        background: var(--bg-light);
-        text-align: center;
+      .schedule-card.break-card h3 {
+        font-weight: 600;
+        color: var(--text-tertiary);
       }
 
-      .registration h2 {
-        font-size: 1.75rem;
-        font-weight: 900;
-        margin-bottom: 1rem;
-        color: var(--text-dark);
+      /* Reception */
+      .reception {
+        border-bottom: 1px solid var(--border-subtle);
       }
 
-      .registration p {
-        font-size: 1.05rem;
-        color: var(--text-mid);
+      .reception-card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-lg);
+        padding: 2.5rem;
+      }
+
+      .reception-details {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
+        max-width: 640px;
+      }
+
+      .reception-meta {
+        display: flex;
+        gap: 2.5rem;
+        flex-wrap: wrap;
         margin-bottom: 2rem;
       }
 
-      .register-button {
+      .reception-button {
         display: inline-block;
-        background: var(--navy);
-        color: white;
-        padding: 1rem 2.5rem;
+        color: #ffffff;
+        background: var(--accent);
+        padding: 0.75rem 2rem;
         text-decoration: none;
         font-weight: 700;
-        font-size: 1.05rem;
+        font-size: 0.85rem;
         font-family: var(--font-heading);
-        letter-spacing: 0.5px;
-        transition: background 0.2s ease;
+        letter-spacing: 0.02em;
+        border: 1px solid var(--accent);
+        border-radius: var(--radius-pill);
+        transition: all 0.25s ease;
       }
 
-      .register-button:hover {
-        background: var(--blue);
-      }
-
-      /* Contact */
-      .contact {
-        background: var(--navy);
-        color: white;
-        padding: 3rem 0;
-        text-align: center;
-      }
-
-      .contact p {
-        font-size: 1.05rem;
-        color: rgba(255, 255, 255, 0.75);
-        margin-bottom: 1.5rem;
-      }
-
-      .contact-button {
-        display: inline-block;
-        background: white;
-        color: var(--navy);
-        padding: 0.85rem 2rem;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 1rem;
-        font-family: var(--font-heading);
-        transition: background 0.2s ease;
-      }
-
-      .contact-button:hover {
-        background: #e2e8f0;
+      .reception-button:hover {
+        opacity: 0.9;
       }
 
       /* Sponsors */
       .sponsors {
-        padding: 3rem 0;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid var(--border-subtle);
       }
 
       .sponsors-group {
-        text-align: center;
-        margin-bottom: 2.5rem;
+        margin-bottom: 3rem;
       }
 
       .sponsors-group:last-child {
@@ -290,21 +383,19 @@
       }
 
       .sponsors-label {
-        font-size: 0.85rem;
-        font-family: var(--font-body);
-        font-weight: 400;
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
         text-transform: uppercase;
-        letter-spacing: 2px;
-        color: var(--text-light);
+        letter-spacing: 0.12em;
+        color: var(--text-tertiary);
         margin-bottom: 1.25rem;
       }
 
       .sponsors-logos {
         display: flex;
-        align-items: flex-start;
-        justify-content: center;
+        align-items: center;
         flex-wrap: wrap;
-        gap: 2.5rem;
+        gap: 1.5rem;
       }
 
       .sponsor-item {
@@ -315,13 +406,22 @@
         text-decoration: none;
         color: inherit;
         max-width: 200px;
+        padding: 1.25rem;
+        border-radius: var(--radius-md);
+        transition: background 0.25s ease;
+      }
+
+      .sponsor-item:hover {
+        background: var(--bg-surface);
       }
 
       .sponsor-logo {
-        height: 50px;
+        height: 48px;
         width: auto;
+        max-width: 160px;
+        object-fit: contain;
         opacity: 0.85;
-        transition: opacity 0.2s ease;
+        transition: opacity 0.25s ease;
       }
 
       .sponsor-item:hover .sponsor-logo {
@@ -329,154 +429,209 @@
       }
 
       .sponsor-name {
-        font-family: var(--font-body);
-        font-size: 0.8rem;
-        color: var(--text-light);
-        margin-top: 0.5rem;
-        line-height: 1.3;
+        font-size: 0.78rem;
+        color: var(--text-tertiary);
+        margin-top: 0.75rem;
+        line-height: 1.4;
       }
 
       /* Footer */
       footer {
         padding: 2rem 0;
         text-align: center;
-        color: var(--text-light);
-        font-size: 0.9rem;
-        border-top: 1px solid var(--border);
+        color: var(--text-tertiary);
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.05em;
+      }
+
+      .footer-link {
+        color: var(--text-tertiary);
+        text-decoration: none;
+        transition: color 0.25s ease;
+      }
+
+      .footer-link:hover {
+        color: var(--text-secondary);
       }
 
       /* Mobile */
       @media (max-width: 768px) {
-        header {
-          padding: 3rem 0;
+        .hero {
+          padding: 7rem 0 3.5rem;
         }
 
-        header h1 {
+        .hero h1 {
+          font-size: 2.75rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.05rem;
+        }
+
+        .hero-meta {
+          gap: 1.5rem;
+        }
+
+        section {
+          padding: 3.5rem 0;
+        }
+
+        .contact-card {
+          padding: 2rem 1.5rem;
+        }
+
+        .sponsors-logos {
+          justify-content: center;
+        }
+
+        .schedule-card {
+          padding: 1.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero h1 {
           font-size: 2.25rem;
         }
 
+        .container {
+          padding: 0 1.25rem;
+        }
       }
     </style>
   </head>
   <body>
-    <header>
+    <nav>
       <div class="container">
+        <span class="nav-logo">Years Ahead</span>
+        <a href="https://forms.gle/L6p3MjJ2RiS1fh5j9" target="_blank" rel="noopener noreferrer" class="nav-link">Register</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="container">
+        <div class="badge">March 27, 2026</div>
         <h1>Years Ahead</h1>
-        <p class="subtitle">An opportunity for students to learn directly from practitioners who built the first generation of digital government.</p>
-        <div class="event-meta">
-          <strong>Friday March 27, 2026</strong> &middot; 1:00&ndash;5:00pm<br>
-          Ford School of Public Policy Auditorium, University of Michigan
+        <p class="hero-subtitle">An opportunity for students to learn directly from practitioners who built the first generation of digital government.</p>
+        <div class="hero-meta">
+          <div class="meta-item">
+            <span class="meta-label">Date</span>
+            <span class="meta-value">Friday, March 27</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Time</span>
+            <span class="meta-value">1:00 &ndash; 5:00 PM</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Location</span>
+            <span class="meta-value">Annenberg Auditorium, Weill Hall, University of Michigan</span>
+          </div>
         </div>
       </div>
     </header>
 
     <section class="about">
       <div class="container">
-        <p>Years Ahead brings together pioneering civic technologists - people who led digital service teams at 18F, USDS, Code for America, and state/local governments - with students entering the field. An afternoon of candid conversation about what actually happened in the first wave of government modernization and what the next generation needs to know.</p>
-      </div>
-    </section>
-
-    <section class="registration">
-      <div class="container">
-        <h2>Register</h2>
-        <p>Sign up to attend Years Ahead and join the conversation.</p>
-        <a href="https://forms.gle/L6p3MjJ2RiS1fh5j9" target="_blank" rel="noopener noreferrer" class="register-button">Register Now</a>
-      </div>
-    </section>
-
-    <section class="audience">
-      <div class="container">
-        <h2>Who's coming</h2>
-        <ul>
-          <li>Veterans of 18F, US Digital Service, and early civic tech organizations</li>
-          <li>Current &amp; former practitioners who built and scaled digital teams inside bureaucracies</li>
-          <li>Students interested in how we build for and with the public</li>
-        </ul>
+        <span class="section-label">About</span>
+        <p class="about-text">Years Ahead brings together pioneering civic technologists, people who led digital service teams at 18F, USDS, Code for America, and state and local governments, with students entering the field. An afternoon of candid conversation about what actually happened in the first wave of government modernization and what the next generation needs to know.</p>
       </div>
     </section>
 
     <section class="schedule">
       <div class="container">
-        <h2>Schedule</h2>
-        <div class="schedule-item">
-          <div class="schedule-time">1:00 PM</div>
-          <div class="schedule-details">
+        <span class="section-label">Schedule</span>
+        <h2 class="section-title">Agenda</h2>
+        <div class="schedule-grid">
+          <div class="schedule-card break-card">
+            <div class="schedule-card-header">
+              <span class="schedule-time">1:00 PM</span>
+            </div>
             <h3>Lunch</h3>
           </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">2:00 PM</div>
-          <div class="schedule-details">
-            <h3>Welcome &amp; Introduction</h3>
+
+          <div class="schedule-card">
+            <div class="schedule-card-header">
+              <span class="schedule-time">2:00 PM</span>
+            </div>
+            <h3>Introduction</h3>
+            <div class="schedule-speakers">Ron Bronson</div>
           </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">2:15 PM</div>
-          <div class="schedule-details">
-            <h3>What Working in Government Taught Me As A Technologist</h3>
-            <span class="session-type">Virtual Panel</span>
+
+          <div class="schedule-card">
+            <div class="schedule-card-header">
+              <span class="schedule-time">2:15 PM</span>
+              <span class="session-type">Virtual Panel</span>
+            </div>
+            <h3>&ldquo;What Working in Government Taught Me As A Technologist&rdquo;</h3>
+            <div class="schedule-speakers">Elizabeth Goodman, Lane Becker, and Amanda Kennedy</div>
           </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">3:00 PM</div>
-          <div class="schedule-details">
-            <h3>Lightning Talks</h3>
-          </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">3:30 PM</div>
-          <div class="schedule-details">
+
+          <div class="schedule-card">
+            <div class="schedule-card-header">
+              <span class="schedule-time">3:15 PM</span>
+            </div>
             <h3>Participatory Design Workshop</h3>
           </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">4:00 PM</div>
-          <div class="schedule-details">
-            <h3>How Change Actually Works: Perspectives on Policy, Power, and What Gets Built</h3>
-            <span class="session-type">Panel</span>
+
+          <div class="schedule-card">
+            <div class="schedule-card-header">
+              <span class="schedule-time">4:00 PM</span>
+              <span class="session-type">Panel</span>
+            </div>
+            <h3>&ldquo;How Change Actually Works: Perspectives on Policy, Power, and What Gets Built&rdquo;</h3>
+            <div class="schedule-speakers">Aidan Sova, John Buckley, Kate Green, and Alan Brouilette</div>
           </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">5:00 PM</div>
-          <div class="schedule-details">
-            <h3>Reception</h3>
-          </div>
+
         </div>
       </div>
     </section>
 
-    <section class="contact">
+    <section class="reception">
       <div class="container">
-        <p>For questions or more information</p>
-        <a href="mailto:bronsonr@umich.edu" class="contact-button">Contact Us</a>
+        <span class="section-label">After the Conference</span>
+        <h2 class="section-title">Networking Reception</h2>
+        <div class="reception-card">
+          <p class="reception-details">Join us after the conference for a networking reception. You will be able to engage with event participants and special guests from Civilla Detroit and the Public Policy Lab in New York. Light refreshments will be served.</p>
+          <div class="reception-meta">
+            <div class="meta-item">
+              <span class="meta-label">When</span>
+              <span class="meta-value">Friday, March 27, 5:00 PM to 6:00 PM</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Where</span>
+              <span class="meta-value">Becky Blank Great Hall, Weill Hall, 735 S. State Street, Ann Arbor, MI 48109</span>
+            </div>
+          </div>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGUs-mxKOElhjzxXICo8fe7uPqwzluJJba-5qFFvlS9AaiVg/viewform" target="_blank" rel="noopener noreferrer" class="reception-button">RSVP for the Reception</a>
+        </div>
       </div>
     </section>
 
     <section class="sponsors">
       <div class="container">
         <div class="sponsors-group">
-          <h3 class="sponsors-label">Organized by</h3>
-          <div class="sponsors-logos">
-            <div class="sponsor-item">
-              <img src="/logos/public-capacity-lab.svg" alt="Public Capacity Lab" class="sponsor-logo">
-              <span class="sponsor-name">Public Capacity Lab</span>
-            </div>
-          </div>
-        </div>
-        <div class="sponsors-group">
           <h3 class="sponsors-label">Co-sponsors</h3>
           <div class="sponsors-logos">
-            <a href="https://www.bettergovernmentlab.org/" target="_blank" rel="noopener noreferrer" class="sponsor-item">
-              <img src="/logos/better-government-lab.png" alt="Better Government Lab" class="sponsor-logo">
-              <span class="sponsor-name">Better Government Lab at the Ford School of Public Policy</span>
+            <a href="https://fordschool.umich.edu/" target="_blank" rel="noopener noreferrer" class="sponsor-item">
+              <img src="/logos/ford-school.png" alt="Ford School of Public Policy" class="sponsor-logo">
+              <span class="sponsor-name">Gerald R. Ford School of Public Policy</span>
             </a>
             <a href="https://taubmancollege.umich.edu/academics/urban-and-regional-planning/bachelor-of-science-in-urban-technology/" target="_blank" rel="noopener noreferrer" class="sponsor-item">
               <img src="/logos/taubman-college.png" alt="Taubman College of Architecture &amp; Urban Planning" class="sponsor-logo">
-              <span class="sponsor-name">Urban Technology at the Taubman College of Architecture &amp; Urban Planning</span>
+              <span class="sponsor-name">Urban Technology at Taubman College</span>
+            </a>
+            <a href="https://www.bettergovernmentlab.org/" target="_blank" rel="noopener noreferrer" class="sponsor-item">
+              <img src="/logos/better-government-lab.png" alt="Better Government Lab" class="sponsor-logo">
+              <span class="sponsor-name">Better Government Lab</span>
             </a>
             <a href="https://statecapacity.ai/" target="_blank" rel="noopener noreferrer" class="sponsor-item">
               <img src="/logos/state-capacity-ai.svg" alt="State Capacity AI" class="sponsor-logo">
               <span class="sponsor-name">State Capacity AI</span>
+            </a>
+            <a href="https://publiccapacity.org" target="_blank" rel="noopener noreferrer" class="sponsor-item">
+              <img src="/logos/public-capacity-lab.svg" alt="Public Capacity Lab" class="sponsor-logo">
+              <span class="sponsor-name">Public Capacity Lab</span>
             </a>
           </div>
         </div>
@@ -485,7 +640,7 @@
 
     <footer>
       <div class="container">
-        <p></p>
+        <p>Years Ahead 2026 &middot; <a href="mailto:bronsonr@umich.edu" class="footer-link">Contact</a></p>
       </div>
     </footer>
   </body>
