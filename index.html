@@ -226,75 +226,21 @@
         max-width: 680px;
       }
 
-      /* Registration */
-      .registration {
-        border-bottom: 1px solid var(--border-subtle);
-        background: var(--bg-surface);
+      .schedule-speakers {
+        font-size: 0.88rem;
+        color: var(--text-tertiary);
+        margin-top: 0.35rem;
+        font-weight: 500;
       }
 
-      .registration-card {
-        background: var(--bg-primary);
-        border: 1px solid var(--border-default);
-        border-radius: var(--radius-lg);
-        padding: 3rem;
-        text-align: center;
-      }
-
-      .registration-card .section-title {
-        margin-bottom: 0.75rem;
-      }
-
-      .registration-card p {
-        color: var(--text-secondary);
-        margin-bottom: 2rem;
-      }
-
-      .register-button {
-        display: inline-block;
-        background: var(--bg-dark);
-        color: #ffffff;
-        padding: 0.85rem 2.25rem;
+      .schedule-card p a {
+        color: var(--accent);
         text-decoration: none;
-        font-weight: 700;
-        font-size: 0.9rem;
-        font-family: var(--font-heading);
-        letter-spacing: 0.02em;
-        border-radius: var(--radius-pill);
-        transition: all 0.25s ease;
+        font-weight: 600;
       }
 
-      .register-button:hover {
-        background: #333333;
-        transform: translateY(-1px);
-      }
-
-      /* Audience */
-      .audience {
-        border-bottom: 1px solid var(--border-subtle);
-      }
-
-      .audience-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 1rem;
-      }
-
-      .audience-card {
-        background: var(--bg-surface);
-        border: 1px solid var(--border-subtle);
-        border-radius: var(--radius-md);
-        padding: 1.75rem;
-        transition: border-color 0.25s ease;
-      }
-
-      .audience-card:hover {
-        border-color: var(--border-default);
-      }
-
-      .audience-card p {
-        font-size: 0.95rem;
-        line-height: 1.6;
-        color: var(--text-secondary);
+      .schedule-card p a:hover {
+        text-decoration: underline;
       }
 
       /* Schedule */
@@ -512,13 +458,8 @@
           padding: 3.5rem 0;
         }
 
-        .registration-card,
         .contact-card {
           padding: 2rem 1.5rem;
-        }
-
-        .audience-grid {
-          grid-template-columns: 1fr;
         }
 
         .sponsors-logos {
@@ -578,34 +519,6 @@
       </div>
     </section>
 
-    <section class="registration">
-      <div class="container">
-        <div class="registration-card">
-          <h2 class="section-title">Register</h2>
-          <p>Sign up to attend Years Ahead and join the conversation.</p>
-          <a href="https://forms.gle/L6p3MjJ2RiS1fh5j9" target="_blank" rel="noopener noreferrer" class="register-button">Register Now</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="audience">
-      <div class="container">
-        <span class="section-label">Who's Coming</span>
-        <h2 class="section-title">The people in the room</h2>
-        <div class="audience-grid">
-          <div class="audience-card">
-            <p>Veterans of 18F, US Digital Service, and early civic tech organizations</p>
-          </div>
-          <div class="audience-card">
-            <p>Current &amp; former practitioners who built and scaled digital teams inside bureaucracies</p>
-          </div>
-          <div class="audience-card">
-            <p>Students interested in how we build for and with the public</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="schedule">
       <div class="container">
         <span class="section-label">Schedule</span>
@@ -622,8 +535,8 @@
             <div class="schedule-card-header">
               <span class="schedule-time">2:00 PM</span>
             </div>
-            <h3>Welcome &amp; Introduction</h3>
-            <p>Opening remarks and framing for the afternoon.</p>
+            <h3>Introduction</h3>
+            <div class="schedule-speakers">Ron Bronson</div>
           </div>
 
           <div class="schedule-card">
@@ -631,24 +544,15 @@
               <span class="schedule-time">2:15 PM</span>
               <span class="session-type">Virtual Panel</span>
             </div>
-            <h3>What Working in Government Taught Me As A Technologist</h3>
-            <p>Practitioners from 18F, USDS, and Code for America reflect on lessons learned building technology inside government.</p>
+            <h3>&ldquo;What Working in Government Taught Me As A Technologist&rdquo;</h3>
+            <div class="schedule-speakers">Liz Goodman, Lane Becker, and Amanda Kennedy</div>
           </div>
 
           <div class="schedule-card">
             <div class="schedule-card-header">
-              <span class="schedule-time">3:00 PM</span>
-            </div>
-            <h3>Lightning Talks</h3>
-            <p>Short, focused presentations on current projects and emerging ideas in civic technology.</p>
-          </div>
-
-          <div class="schedule-card">
-            <div class="schedule-card-header">
-              <span class="schedule-time">3:30 PM</span>
+              <span class="schedule-time">3:15 PM</span>
             </div>
             <h3>Participatory Design Workshop</h3>
-            <p>A hands-on session exploring how to design public services with the communities they serve.</p>
           </div>
 
           <div class="schedule-card">
@@ -656,15 +560,17 @@
               <span class="schedule-time">4:00 PM</span>
               <span class="session-type">Panel</span>
             </div>
-            <h3>How Change Actually Works: Perspectives on Policy, Power, and What Gets Built</h3>
-            <p>A candid conversation about navigating bureaucracy, building coalitions, and making lasting change in public institutions.</p>
+            <h3>&ldquo;How Change Actually Works: Perspectives on Policy, Power, and What Gets Built&rdquo;</h3>
+            <div class="schedule-speakers">Aidan Sova, John Buckley, Kate Green, and Alan Brouilette</div>
           </div>
 
-          <div class="schedule-card break-card">
+          <div class="schedule-card">
             <div class="schedule-card-header">
               <span class="schedule-time">5:00 PM</span>
             </div>
-            <h3>Reception</h3>
+            <h3>Networking Reception</h3>
+            <p>Becky Blank Great Hall, Weill Hall, 735 S. State Street, Ann Arbor</p>
+            <p>Special guests from Civilla Detroit and the Public Policy Lab in New York. Light refreshments served.</p>
           </div>
         </div>
       </div>
@@ -694,7 +600,7 @@
           <h3 class="sponsors-label">Co-sponsors</h3>
           <div class="sponsors-logos">
             <a href="https://fordschool.umich.edu/" target="_blank" rel="noopener noreferrer" class="sponsor-item">
-              <img src="/logos/ford-school.svg" alt="Ford School of Public Policy" class="sponsor-logo">
+              <img src="/logos/ford-school.png" alt="Ford School of Public Policy" class="sponsor-logo">
               <span class="sponsor-name">Gerald R. Ford School of Public Policy</span>
             </a>
             <a href="https://www.bettergovernmentlab.org/" target="_blank" rel="noopener noreferrer" class="sponsor-item">
